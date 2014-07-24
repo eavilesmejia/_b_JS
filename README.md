@@ -1147,9 +1147,16 @@ they both update the view when the model changes and update the model when the u
 
 *In B drivers are handled from a dedicated environment (application modules), not combined application*
 
-*The Controllers are located in the folder "/controller/module name", and are called to our site with script tags right after call _b_ core*
+*The Controllers are located in the folder "/controller/module_name", and are called to our site with script tags right after call _b_ core*
 
 *Example:*
+
+*In this case the module name is index and contact*
+
+         <script src="YOUR PATH/__b__/base/__b__.min.js" data-path="YOUR INCLUDE PATH"></script>
+         <script src="YOUR PATH/__b__/controller/index/init.js"></script>
+                                            **OR**
+         <script src="YOUR PATH/__b__/controller/contact/init.js"></script>
 
         //The Index Controller
         __.$(document).ready(function(){
