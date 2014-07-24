@@ -1,4 +1,4 @@
-__b__JS Development Version
+__b__JS Framework (Development Version)
 =======
 
 
