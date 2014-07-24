@@ -496,7 +496,7 @@ DOM Tools
     
     var my_selector = __.$('.parent');
     
-    my_selector.get('child') // Return .child
+    my_selector.get('.child') // Return .child
 
 **Method `.each(callback)`**
 
