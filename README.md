@@ -14,6 +14,7 @@ Including Scripts
 =======
 
 *"YOUR INCLUDE PATH" : Is used to include different libraries of the framework, as well as external libraries or drivers in the directory*
+
 *Example: (/assets/js/_b_/)*    
     
     <script src="YOUR PATH/__b__/base/__b__.min.js" data-path="YOUR INCLUDE PATH"></script>
