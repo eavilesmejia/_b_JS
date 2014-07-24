@@ -1101,9 +1101,9 @@ Getters
                 platform: 'Linux x86_64',
             }
             
-**Method `.get_encoded_id(long(optional))`**
+**Method `.get_encoded_id(length(optional))`**
 
-*(Returns a simple encoded id. If long is passed the code is truncated)*
+*(Returns a simple encoded id. If length is passed the code is truncated)*
      
      __.get_encoded_id(10); //aA25Gtsht6
      
