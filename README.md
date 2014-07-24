@@ -100,8 +100,8 @@ DOM Tools
     
     my_selector.children(function(child){
         __.$(child).filter('.child_1', function(){
-            
-            /*Is .child_1*/
+
+            /*Is .child_1 inside my_selector ?*/
             
         },function(){
             /*Not founded*/
@@ -126,7 +126,7 @@ DOM Tools
         _clone_with_child,
         _clone_not_child;
     
-    _clone_with_child = my_selector.clone(true);
+    _clone_with_child = my_selector.clone(true); //Clone Childs
     _clone_not_child = my_selector.clone();
     
     
