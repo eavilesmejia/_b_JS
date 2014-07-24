@@ -986,15 +986,6 @@ Object Tools
 *Array is considered a native type inherited from Object, you can use an array as a parameter haystack*
     
     __.in_object(5, {a:5,b:6}) //Return TRUE
-
-
-**Method `.in_object(needle, haystack)`**
-
-*(Verify existence of element in object)*
-
-*Array is considered a native type inherited from Object, you can use an array as a parameter haystack*
-    
-    __.in_object(5, {a:5,b:6}) //Return TRUE
     
 **Method `.to_object(String|Array)`**
 
