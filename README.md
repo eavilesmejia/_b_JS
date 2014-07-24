@@ -14,7 +14,7 @@ Give your JS App MVC | MTV pattern with Models, Views, Controllers, Templates, E
 Including Scripts
 =======
 
-    "YOUR INCLUDE PATH" : Is used to include different libraries of the framework, as well as external libraries or drivers in the directory
+*"YOUR INCLUDE PATH" : Is used to include different libraries of the framework, as well as external libraries or drivers in the directory*
     
     <script src="YOUR PATH/__b__/base/__b__.min.js" data-path="YOUR INCLUDE PATH (/assets/js/_b_/)"></script>
     <script src="YOUR PATH/__b__/controller/YOUR CONTROLLER.min.js"></script>
