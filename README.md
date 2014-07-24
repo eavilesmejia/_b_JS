@@ -596,6 +596,8 @@ Events
         
     })
     
+**Method removeListener in dev**
+    
 Helpers
 --------
     
