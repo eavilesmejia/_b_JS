@@ -87,7 +87,7 @@ DOM Tools
     var my_selector = __.$(window);
     
     //The selector must be a window object
-    my_selector.ready(function(){
+    my_selector.loadfunction(){
         /* My code */
     });
     
