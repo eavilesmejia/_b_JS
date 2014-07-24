@@ -989,7 +989,7 @@ Object Tools
     
 **Method `.to_object(String|Array)`**
 
-*(Parse String or Object to Array)*
+*(Parse String or Array to Object)*
     
     __.to_object('Hola') // Return [0=>'H',1=>'o',2=>'l',3=>'a']
     __.to_aobject(['H','o','l','a']) // Return [0=>'H',1=>'o',2=>'l',3=>'a']
