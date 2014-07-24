@@ -1140,24 +1140,72 @@ Getters
 
 
 
-B Class
+B Controllers
 ========
+Controllers are an intermediary between models and views which are classically responsible for two tasks: 
+they both update the view when the model changes and update the model when the user manipulates the view.
 
-*Pending Documentation*
+*In B drivers are handled from a dedicated environment (application modules), not combined application*
 
+*Example:*
+
+        //The Index Controller
+        __.$(document).ready(function(){
+            __.include('my_model.js', function(){
+                //My Code for the model
+                
+                var template = new _.Template,                
+                    data_from_model = {
+                        name : 'Carl',
+                        lastname : 'Jackson'
+                    };
+                    
+                Template.my_view(data_from_model, function(my_html){
+                    //Do something with my_html
+                })
+  
+            })
+            
+            //My code
+        })
+        
+        
+        //The Contact Controller
+        __.$(document).ready(function(){
+            __.include('form.js', function(){
+                //My Code for the model
+                
+                var template = new _.Template,  
+                    form_contact = new Form,
+                    data_from_model = {
+                        name : 'Carl',
+                        lastname : 'Jackson'
+                    };
+                    
+                form_contact.on('complete', function(result){
+                    //Do something with result
+                })
+                                    
+                __.$('.my_form').addListener('submit', function(e){
+                        form_contact.method('POST');
+                        form_contact.action('/contact/');
+                        form_contact.pack(e.target);
+                        form_contact.submit(e)
+                })    
+
+            })
+            
+            //My code
+        })
+        
+        
+                       
 B Models
 ========
                  
 *Pending Documentation*
 
 *Working on new Models*
-
-    
-B Controllers
-========
-
-*Pending Documentation*
-
 
 B Views
 =======
