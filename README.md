@@ -1147,6 +1147,8 @@ they both update the view when the model changes and update the model when the u
 
 *In B drivers are handled from a dedicated environment (application modules), not combined application*
 
+*The Controllers are located in the folder "/controller/module name", and are called to our site with script tags right after call _b_ core*
+
 *Example:*
 
         //The Index Controller
@@ -1155,10 +1157,10 @@ they both update the view when the model changes and update the model when the u
                 //My Code for the model
                 
                 var template = new _.Template,                
-                    data_from_model = {
+                    data_from_model = my_model.get({
                         name : 'Carl',
                         lastname : 'Jackson'
-                    };
+                    });
                     
                 Template.my_view(data_from_model, function(my_html){
                     //Do something with my_html
@@ -1176,11 +1178,7 @@ they both update the view when the model changes and update the model when the u
                 //My Code for the model
                 
                 var template = new _.Template,  
-                    form_contact = new Form,
-                    data_from_model = {
-                        name : 'Carl',
-                        lastname : 'Jackson'
-                    };
+                    form_contact = new Form;
                     
                 form_contact.on('complete', function(result){
                     //Do something with result
