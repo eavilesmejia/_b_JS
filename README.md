@@ -13,11 +13,11 @@ Give your JS App MVC | MTV pattern with Models, Views, Controllers, Templates, E
 Compatibility with browsers
 =======
     
-     -IE > 9
-     -Chrome > 32
-     -Firefox > 28
-     -Opera 23 >
-     -Safari 6 >
+    -IE > 9
+    -Chrome > 32
+    -Firefox > 28
+    -Opera 23 >
+    -Safari 6 >
     
     *If there is any browser incompatibility please notify*
 
