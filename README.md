@@ -5,8 +5,7 @@ __b__JS Framework (Development Version)
 
 Give your JS App MVC | MTV pattern with Models, Views, Controllers, Templates, Events, Connections, Real Time Communications, etc...
 
-      This framework is a fact with the intention of contributing effort, contributions from developers 
-      is key equally constructive criticism.
+      This framework was developed with the sole intention of contributing. The contribution of users is important, as well as constructive criticism.
       
       "Please contribute"
 
