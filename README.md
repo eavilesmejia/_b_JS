@@ -1163,3 +1163,8 @@ B Views
 =======
 
 *Pending Documentation*
+
+B Templates
+========
+
+*Pending Documentation*
