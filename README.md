@@ -1151,11 +1151,11 @@ they both update the view when the model changes and update the model when the u
 
 *Example:*
 
-*In this case the module name is index and contact*
+*In this case the module name is index and contact respectively*
 
          <script src="YOUR PATH/__b__/base/__b__.min.js" data-path="YOUR INCLUDE PATH"></script>
          <script src="YOUR PATH/__b__/controller/index/init.js"></script>
-                                            **OR**
+                                          **OR IN CASE**
          <script src="YOUR PATH/__b__/controller/contact/init.js"></script>
 
         //The Index Controller
