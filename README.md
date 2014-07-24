@@ -1153,7 +1153,7 @@ they both update the view when the model changes and update the model when the u
 
         //The Index Controller
         __.$(document).ready(function(){
-            __.include('my_model.js', function(){
+            __.include('my_model', function(){
                 //My Code for the model
                 
                 var template = new _.Template,                
@@ -1174,7 +1174,7 @@ they both update the view when the model changes and update the model when the u
         
         //The Contact Controller
         __.$(document).ready(function(){
-            __.include('form.js', function(){
+            __.include('model/Form', function(){
                 //My Code for the model
                 
                 var template = new _.Template,  
