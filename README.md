@@ -101,7 +101,7 @@ DOM Tools
     my_selector.children(function(child){
         __.$(child).filter('.child_1', function(){
 
-            /*Is .child_1 inside my_selector ?*/
+            /*Is .child_1 inside .selector ?*/
             
         },function(){
             /*Not founded*/
@@ -395,7 +395,7 @@ DOM Tools
     var my_selector = __.$('parent');
     
     my_selector.find('.need_be_found', function(found){
-          __.$(found) // Object classneed_be_found
+          __.$(found) // Object class need_be_found is inside .parent?
     }); 
     
 **Method `.hasClass(elem, class)`**
