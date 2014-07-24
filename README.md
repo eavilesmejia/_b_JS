@@ -248,7 +248,7 @@ DOM Tools
     
     my_selector.html('<div></div>');
     my_selector.html('Text'); // Replace div
-    my_selector.html(); //Return Text\
+    my_selector.html(); //Return "Text" 
     
 **Method `.text('text')`**
 
