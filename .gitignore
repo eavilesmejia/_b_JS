@@ -1,0 +1,16 @@
+#Ignora los archivos de configuracion
+public/assets/js/.git
+public/assets/js/.git/*
+
+#Idea
+.idea/*
+.idea/*.xml
+.idea/*.iws
+
+#Node Modules
+node/node_modules
+node/node_modules/*
+
+#Images
+test
+test/*
