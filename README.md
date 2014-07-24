@@ -876,7 +876,7 @@ Helpers
         p (p.first is FALSE and p.last is TRUE)
      })
 
-**Method `.callback_audit(callback, params**)`**
+**Method `.callback_audit(callback, param1,param2,..)`**
 
 *(This verifies that the callback set, if so then runs it with the given parameters)*
     
