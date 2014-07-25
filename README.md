@@ -752,75 +752,81 @@ __.is_global(my_global) // Return TRUE
 **Method `.is_$(param)`**
 
 *(Validate if param is $ object.) *
-    
-     var no_$ = document, 
-         my_$ = __.$('body');
-         
-     __.is_$(no_$) // Return FALSE
-     __.is_$(my_$) // Return TRUE 
+```js    
+var no_$ = document, 
+ my_$ = __.$('body');
+ 
+__.is_$(no_$) // Return FALSE
+__.is_$(my_$) // Return TRUE 
+```
       
 **Method `.is_string(param)`**
 
 *(Validate if param is String.)*
-    
-     var no_string = document, 
-         my_string = 'String example';
-         
-     __.is_string(no_string) // Return FALSE
-     __.is_string(my_string) // Return TRUE
+```js    
+var no_string = document, 
+ my_string = 'String example';
+ 
+__.is_string(no_string) // Return FALSE
+__.is_string(my_string) // Return TRUE
+```
       
 **Method `.is_function(param)`**
 
 *(Validate if param is Function.)*
-    
-     var no_function = 'String example', 
-         my_function = function(){
-         
-         };
-         
-     __.is_function(no_function) // Return FALSE
-     __.is_function(my_function) // Return TRUE 
+```js    
+var no_function = 'String example', 
+ my_function = function(){
+ 
+ };
+ 
+__.is_function(no_function) // Return FALSE
+__.is_function(my_function) // Return TRUE 
+```
      
 **Method `.is_html(param)`**
 
 *(Validate if param is Html.)*
-    
-     var no_html = 'String example', 
-         my_html = '<div>Hello!</div>';
-         
-     __.is_html(no_html) // Return FALSE
-     __.is_html(my_html) // Return TRUE 
+```js    
+var no_html = 'String example', 
+ my_html = '<div>Hello!</div>';
+ 
+__.is_html(no_html) // Return FALSE
+__.is_html(my_html) // Return TRUE 
+```
      
 **Method `.is_boolean(param)`**
 
 *(Validate if param is Boolean.)*
-    
-     var no_bool = 'String example', 
-         my_bool = TRUE';
-         
-     __.is_boolean(no_bool) // Return FALSE
-     __.is_boolean(my_bool) // Return TRUE
+```js    
+var no_bool = 'String example', 
+ my_bool = TRUE';
+ 
+__.is_boolean(no_bool) // Return FALSE
+__.is_boolean(my_bool) // Return TRUE
+```
      
 **Method `.is_regexp(param)`**
 
 *(Validate if param is Regexp.)*
-    
-     var no_regexp = 'String example', 
-         my_regexp = /[1-9]/g || new RegExp('[1-9]','g');
-         
-     __.is_regexp(no_regexp) // Return FALSE
-     __.is_regexp(my_regexp) // Return TRUE
-     
+```js    
+var no_regexp = 'String example', 
+ my_regexp = /[1-9]/g || new RegExp('[1-9]','g');
+ 
+__.is_regexp(no_regexp) // Return FALSE
+__.is_regexp(my_regexp) // Return TRUE
+```     
      
 **Method `.is_set(param)`**
 
 *(Validate if param is set.)*
-    
-     var no_set = undefined || NULL || FALSE, 
-         my_set = 'Seted' || TRUE || ....;
-         
-     __.is_set(no_set) // Return FALSE
-     __.is_set(my_set) // Return TRUE
+```js 
+var no_set = undefined || NULL || FALSE, 
+ my_set = 'Seted' || TRUE || ....;
+ 
+__.is_set(no_set) // Return FALSE
+__.is_set(my_set) // Return TRUE
+```
      
 **Method `.is_empty(param)`**
 
