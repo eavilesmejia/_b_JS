@@ -387,31 +387,32 @@ my_selector.next(function(sibling){
     __.$(sibling) // Object class child_2
 });
 ```
-    
-    
+       
 **Method `.nexts(filter, callback)`**
 
 *(Get next sibling Node. Callback Needed, if filter is passed the child are matched else return all)*
 
-    //HTML
-    <div class="parent">
-        <div class="child_1"></div>
-        <div class="child_2"></div>
-        <div class="child_2"></div>
-        <div class="child_3"></div>
-    </div>
-    
-    var my_selector = __.$('child_1');
-    
-    my_selector.nexts('.child_2', function(siblings){
-         // Object list class child_2
+```html
+<div class="parent">
+    <div class="child_1"></div>
+    <div class="child_2"></div>
+    <div class="child_2"></div>
+    <div class="child_3"></div>
+</div>
+```
+```js    
+var my_selector = __.$('child_1');
+
+my_selector.nexts('.child_2', function(siblings){
+     // Object list class child_2
+}); 
+
+ my_selector.nexts(function(siblings){
+         // Object list child_2, child_2, child_3 
+         // All nexts nodes returned
     }); 
+```
     
-     my_selector.nexts(function(siblings){
-             // Object list child_2, child_2, child_3 
-             // All nexts nodes returned
-        }); 
-        
 **Method `.find(filter, callback)`**
 
 *(Get next sibling Node. Filter and Callback Needed)*
