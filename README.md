@@ -1210,8 +1210,12 @@ __.get_script('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', fun
 });
 ```
 
-B Controllers
+Working B
 ========
+
+B Controllers
+-------------
+
 Controllers are an intermediary between models and views which are classically responsible for two tasks: 
 they both update the view when the model changes and update the model when the user manipulates the view.
 
@@ -1280,13 +1284,13 @@ __.$(document).ready(function(){
 ```        
                        
 B Models
-========
+--------
                  
 *Pending Documentation*
 
 
 B Views
-=======
+--------
 
 Views are a visual representation of models that present a filtered view of their current state. 
 A view typically observes a model and is notified when the model changes, allowing the view to update itself accordingly. 
@@ -1328,7 +1332,7 @@ __.$(document).ready(function(){
 ```  
 
 B Templates
-========
+-----------
 
 In the context of JavaScript frameworks that support MVC/MV*, 
 it is worth briefly discussing JavaScript templating and its relationship to views as we briefly touched upon it in the last section.
