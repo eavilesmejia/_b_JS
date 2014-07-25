@@ -28,10 +28,11 @@ Including Scripts
 *"YOUR INCLUDE PATH" : Is used to include different libraries of the framework, as well as external libraries or drivers in the directory*
 
 *Example: (/assets/js/_b_/)*    
-    
+
+```html    
     <script src="YOUR PATH/__b__/base/__b__.min.js" data-path="YOUR INCLUDE PATH"></script>
     <script src="YOUR PATH/__b__/controller/YOUR CONTROLLER.min.js"></script>
-
+```
 *The files to be precompiled at include .min.js. You can use uglify or other precompiled to generate it .min*
 
 
