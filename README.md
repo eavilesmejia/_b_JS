@@ -191,16 +191,19 @@ my_selector.data({'textContent': My Other Example}); // Assign My Other Example.
 
 *(Remove Attr from Object. Attr_name needed )*
 
-    //HTML BUTTON
-    <a href="http://out.com">My Link</a>
-    
-    var my_selector = __.$('a');
-    
-    my_selector.removeAttr('href'); // Remove href
-    
-    //RESULT OF REMOVE
-    <a>My Link</a>
+```html
+//HTML BUTTON
+<a href="http://out.com">My Link</a>
+```
+```js
+var my_selector = __.$('a');
 
+my_selector.removeAttr('href'); // Remove href
+```
+```html
+//RESULT OF REMOVE
+<a>My Link</a>
+```
 
 **Method `.css('style_name')`**
 
