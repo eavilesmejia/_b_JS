@@ -41,11 +41,13 @@ DOM Tools
 
 *This method helps you find DOM objects and generate $ object*
 
+```js
     var my_selector = __.$('<div></div>');
     var my_selector = __.$('.selector');
     var my_selector = __.$('.selector:pseudo');
     var my_selector = __.$('.selector_parent .selector_child');
     var my_selector = __.$('#selector');
+```
     
 *You can try many possibilities to find and get dom elements*
 
