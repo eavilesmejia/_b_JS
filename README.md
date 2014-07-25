@@ -209,17 +209,21 @@ my_selector.removeAttr('href'); // Remove href
 
 *(CSS Object. If style_value object type is passed, it assigned, else if css_value is string type, then value is returned)*
 
-    //HTML BUTTON
-    <div style="border:none; background-color:#ccc;"></div>
-    
-    var my_selector = __.$('div');
-    
-    my_selector.css('background-color'); // Returns #ccc
-    my_selector.css({'color': '#666'}); // Assign color:#666 
-    
-    //RESULT OF ASSIGN
-    <div style="border:none; background-color:#ccc; color:#666;"></div>
-    
+```html
+//HTML BUTTON
+<div style="border:none; background-color:#ccc;"></div>
+```
+```js
+var my_selector = __.$('div');
+
+my_selector.css('background-color'); // Returns #ccc
+my_selector.css({'color': '#666'}); // Assign color:#666 
+```
+```html    
+//RESULT OF ASSIGN
+<div style="border:none; background-color:#ccc; color:#666;"></div>
+```
+
 **Method `.after(html || _$ Object)`**
 
 *(Insert DOM object after element)*
