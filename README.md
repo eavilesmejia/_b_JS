@@ -1395,6 +1395,10 @@ __.$(document).ready(function(){
 
 ```
 
+B Libs
+========
+
+*Pending Documentation*
 
 B Class
 ========
