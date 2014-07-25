@@ -173,18 +173,20 @@ my_selector.data({'textContent': My Other Example}); // Assign My Other Example.
 **Method `.attr('attr_value')`**
 
 *(Attr Object. If attr_value object type is passed, it assigned, else if attr_value is string type, then value is returned)*
-
+```html
     //HTML BUTTON
     <a href="http://out.com">My Link</a>
-    
+```
+```js
     var my_selector = __.$('a');
     
     my_selector.attr('href'); // Returns http://out.com
     my_selector.attr({'href': 'http://inner.com'}); // Assign http://inner.com. 
-    
+```
+```html
     //RESULT OF ASSIGN
     <a href="http://inner.com">My Link</a>
-    
+``` 
 **Method `.removeAttr('attr_name')`**
 
 *(Remove Attr from Object. Attr_name needed )*
