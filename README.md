@@ -285,50 +285,56 @@ my_selector.text(); //Return Text
 **Method `.val('text')`**
 
 *(Assign value in DOM object. If value is passed is assigned else is returned)*
+```html
+//HTML INPUT
+<input type="text" value="">
+```
+```js
+var my_selector = __.$('input[type="text"]');
 
-    //HTML INPUT
-    <input type="text" value="">
-  
-    var my_selector = __.$('input[type="text"]');
-    
-    my_selector.val('My value'); //Value assigned
-    my_selector.val(); //Return My value
-
-    //RESULT OF VAL
-    <input type="text" value="My value">
-
+my_selector.val('My value'); //Value assigned
+my_selector.val(); //Return My value
+```
+```html
+//RESULT OF VAL
+<input type="text" value="My value">
+```
 
 **Method `.hide()`**
 
 *(Hide DOM Object)*
 
-    var my_selector = __.$('div');
-    
-    my_selector.hide(); //Element display none
+```js
+var my_selector = __.$('div');
+
+my_selector.hide(); //Element display none
+```
 
 **Method `.show()`**
 
 *(Show DOM Object)*
 
-    var my_selector = __.$('div');
-    
-    my_selector.show(); //Element display block
+```js
+var my_selector = __.$('div');
 
+my_selector.show(); //Element display block
+```
 **Method `.parent(callback)`**
 
 *(Get Dom Parent first. Callback Needed)*
+```html
+//HTML
+<div class="parent">
+    <div class="child"></div>
+</div>
+```
+```js
+var my_selector = __.$('child');
 
-    //HTML
-    <div class="parent">
-        <div class="child"></div>
-    </div>
-    
-    var my_selector = __.$('child');
-    
-    my_selector.parent(function(parent){
-        __.$(parent) // Object class parent
-    }); 
-    
+my_selector.parent(function(parent){
+    __.$(parent) // Object class parent
+}); 
+```    
     
 **Method `.parents(parent_class, callback)`**
 
