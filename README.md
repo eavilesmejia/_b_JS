@@ -57,14 +57,13 @@ var my_selector = __.$('#selector');
 **Attribute `exist`**
 
 *(Verify DOM element existence)*
-
 ```js
 var my_selector = __.$('.dom_to_verify');
 if(my_selector.exist){
     //TRUE if my_selector exist in DOM tree
 }
 ```
-    
+   
 **Method `.object()`**
 
 *(Return $ object)*
@@ -73,6 +72,7 @@ var my_selector = __.$('.$_to_get');
 
 my_selector.object(); //Return $ object
 ```
+
 **Method `.ready()`**
 
 *(Used for the execution of our code, when the Document Object ready)*
@@ -83,7 +83,8 @@ var my_selector = __.$(document);
 my_selector.ready(function(){
     /* My code */
 }); 
-```    
+``` 
+   
 **Method `.load()`**
 
 *(Used for the execution of our code, when the the complete page is fully loaded)*
@@ -112,7 +113,7 @@ my_selector.children(function(child){
     })
 })
 ```    
-    
+   
 **Method `.empty(void)`**
 
 *(Empty DOM Object)*
@@ -166,7 +167,6 @@ my_selector.prop('textContent'); // Returns My Example
 my_selector.data({'textContent': My Other Example}); // Assign My Other Example. 
 ```
 ```html
-//RESULT OF ASSIGN
 <button id="my_button">My Other Example</button>
 ```
 
@@ -174,7 +174,6 @@ my_selector.data({'textContent': My Other Example}); // Assign My Other Example.
 
 *(Attr Object. If attr_value object type is passed, it assigned, else if attr_value is string type, then value is returned)*
 ```html
-//HTML BUTTON
 <a href="http://out.com">My Link</a>
 ```
 ```js
@@ -184,15 +183,14 @@ my_selector.attr('href'); // Returns http://out.com
 my_selector.attr({'href': 'http://inner.com'}); // Assign http://inner.com. 
 ```
 ```html
-//RESULT OF ASSIGN
 <a href="http://inner.com">My Link</a>
 ``` 
+
 **Method `.removeAttr(attr_name)`**
 
 *(Remove Attr from Object. Attr_name needed )*
 
 ```html
-//HTML BUTTON
 <a href="http://out.com">My Link</a>
 ```
 ```js
@@ -201,7 +199,6 @@ var my_selector = __.$('a');
 my_selector.removeAttr('href'); // Remove href
 ```
 ```html
-//RESULT OF REMOVE
 <a>My Link</a>
 ```
 
@@ -210,7 +207,6 @@ my_selector.removeAttr('href'); // Remove href
 *(CSS Object. If style_value object type is passed, it assigned, else if css_value is string type, then value is returned)*
 
 ```html
-//HTML BUTTON
 <div style="border:none; background-color:#ccc;"></div>
 ```
 ```js
@@ -220,7 +216,6 @@ my_selector.css('background-color'); // Returns #ccc
 my_selector.css({'color': '#666'}); // Assign color:#666 
 ```
 ```html    
-//RESULT OF ASSIGN
 <div style="border:none; background-color:#ccc; color:#666;"></div>
 ```
 
@@ -295,7 +290,6 @@ my_selector.val('My value'); //Value assigned
 my_selector.val(); //Return My value
 ```
 ```html
-//RESULT OF VAL
 <input type="text" value="My value">
 ```
 
@@ -474,7 +468,6 @@ var my_selector = __.$('.div');
 my_selector.removeClass('div') // If have the class its removed
 ```
 ```html
-//RESULT
 <div></div>
 ```    
     
@@ -601,8 +594,6 @@ var my_selector = __.$('.parent li');
 my_selector.sort() // Sort Element by default innerHtml prop, order asc
 ```
 ```html
-
-//RESULT ORDER ASC
 <ul class="parent">
    <li>A</li>
    <li>B</li>
@@ -613,26 +604,26 @@ my_selector.sort() // Sort Element by default innerHtml prop, order asc
 **Method `.trigger(event, callback)`**
 
 *(Trigger Event. Event and Callback Needed)*
-
+```js
     var body = __.$('body'),
-        my_selector = __.$('.div');
-    
-    my_select.addEventListener('click', function(){
-        alert('I am clicked');
-    });
-    
-    body.addEventListener('click', '.div', function(){
-            alert('I am clicked as delegated');
-    });
-    
-    body.addEventListener('click', '.div1', function(){
-                alert('I am clicked as delegated in div1');
-    });   
-    
-    
-    my_selector.trigger('click'); // alert I am Clicked and I am clicked as delegated
-    __.$('.div1').trigger('click') // alert I am clicked as delegated in div1
-   
+    my_selector = __.$('.div');
+
+my_select.addEventListener('click', function(){
+    alert('I am clicked');
+});
+
+body.addEventListener('click', '.div', function(){
+        alert('I am clicked as delegated');
+});
+
+body.addEventListener('click', '.div1', function(){
+            alert('I am clicked as delegated in div1');
+});   
+
+
+my_selector.trigger('click'); // alert I am Clicked and I am clicked as delegated
+__.$('.div1').trigger('click') // alert I am clicked as delegated in div1
+```
     
 
 Events
