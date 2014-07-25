@@ -1166,48 +1166,49 @@ __.get_date('2014-10-13 08:25:02');
 **Method `.get_nav()`**
 
 *(Returns the used nav)*
-     
-     __.get_nav(); 
-     //Return Example {
-                nav: 'Chrome',
-                version: '32'
-                platform: 'Linux x86_64',
-            }
+```js     
+__.get_nav(); 
+//Return Example {
+        nav: 'Chrome',
+        version: '32'
+        platform: 'Linux x86_64',
+    }
+```
             
 **Method `.get_encoded_id(length(optional))`**
 
 *(Returns a simple encoded id. If length is passed the code is truncated)*
-     
-     __.get_encoded_id(10); //aA25Gtsht6
-     
+```js     
+__.get_encoded_id(10); //aA25Gtsht6
+```     
      
 **Method `.get_object_size(object)`**
 
 *(Returns the object size.)*
-
-     var _my_object = {a:1,b:2c:3};
-     __.get_object_size(_my_object); // Return 3
-     
+```js
+var _my_object = {a:1,b:2c:3};
+__.get_object_size(_my_object); // Return 3
+```
      
 **Method `.get_cookie(name)`**
 
 *(Returns cookies.)*
-    
-    //Cookie my_cookie=asf58as52dsf84e5
-    //Cookie my_csrf=asdf584a2d48rwefr42
-    
-     __.get_cookie('my_cookie'); // Return asf58as52dsf84e5
-     __.get_cookie('my_csrf'); // Return asdf584a2d48rwefr42
-     
+```js    
+//Cookie my_cookie=asf58as52dsf84e5
+//Cookie my_csrf=asdf584a2d48rwefr42
+
+ __.get_cookie('my_cookie'); // Return asf58as52dsf84e5
+ __.get_cookie('my_csrf'); // Return asdf584a2d48rwefr42
+```
+ 
 **Method `.get_script(url, callback)`**
 
 *(Get local or remote script.)*
-    
-     __.get_script('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', function(){
-        //Script ready
-     });
-
-
+```js    
+__.get_script('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', function(){
+    //Script ready
+});
+```
 
 B Controllers
 ========
@@ -1221,12 +1222,13 @@ they both update the view when the model changes and update the model when the u
 *Example:*
 
 *In this case the module name is index and contact respectively*
-
-         <script src="YOUR PATH/__b__/base/__b__.min.js" data-path="YOUR INCLUDE PATH"></script>
-         <script src="YOUR PATH/__b__/controller/index/init.js"></script>
-                                          **OR IN CASE**
-         <script src="YOUR PATH/__b__/controller/contact/init.js"></script>
-
+```html
+<script src="YOUR PATH/__b__/base/__b__.min.js" data-path="YOUR INCLUDE PATH"></script>
+<script src="YOUR PATH/__b__/controller/index/init.js"></script>
+                              **OR IN CASE**
+<script src="YOUR PATH/__b__/controller/contact/init.js"></script>
+```
+```js
         //The Index Controller
         __.$(document).ready(function(){
             __.include('my_model', function(){
@@ -1272,7 +1274,7 @@ they both update the view when the model changes and update the model when the u
             //My code
         })
         
-        
+```        
                        
 B Models
 ========
