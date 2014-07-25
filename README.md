@@ -1281,7 +1281,6 @@ B Models
                  
 *Pending Documentation*
 
-*Working on new Models*
 
 B Views
 =======
@@ -1387,3 +1386,9 @@ __.$(document).ready(function(){
 })
 
 ```
+
+
+B Class
+========
+
+*Pending Documentation*
