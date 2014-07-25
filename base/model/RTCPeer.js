@@ -22,7 +22,7 @@ var WARNING_RTC = {
     }
 };
 
-var RTCPeer = function (config) {
+var RTCPeer = function () {
     /**Variables*/
     var _proto = this.__proto__,
         _navigator = this.get_nav(),
