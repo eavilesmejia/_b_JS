@@ -1335,7 +1335,7 @@ it is worth briefly discussing JavaScript templating and its relationship to vie
 *Example:*
 
 ```html
-//Creating Template reports.html
+//Creating Template /templates/reports/index.html
 <div class="reports_info">
     <table>
         <tr>
@@ -1356,10 +1356,10 @@ it is worth briefly discussing JavaScript templating and its relationship to vie
 
 ```js
 
-//Defining View
+//Defining View /views/reports/init.js
 Template.add('my_view', function (data, callback) {
     var _self = this;
-    _self.get('reports.html', function (template) {
+    _self.get('reports/index', function (template) {
         if (_.is_set(callback)) {
             _self.parse(template, data, callback);
         }
@@ -1367,7 +1367,7 @@ Template.add('my_view', function (data, callback) {
 });
 
 
-//The Controller
+//The Controller /controller/reports/init.js
 __.$(document).ready(function(){
 
     var template = new _.Template,
