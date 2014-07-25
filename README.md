@@ -125,30 +125,32 @@ my_selector.empty(); // Dom Empty
 **Method `.clone(bool)`**
 
 *(Clone Object. Optional clone child's object)*
+```js
+var my_selector = __.$('.selector'),
+    _clone_with_child,
+    _clone_not_child;
 
-    var my_selector = __.$('.selector'),
-        _clone_with_child,
-        _clone_not_child;
-    
-    _clone_with_child = my_selector.clone(true); //Clone Childs
-    _clone_not_child = my_selector.clone();
-    
+_clone_with_child = my_selector.clone(true); //Clone Childs
+_clone_not_child = my_selector.clone();
+```    
     
 **Method `.data('data_name', 'data_value')`**
 
 *(Data Object. If data_value is passed, it assigned to object, else it returned )*
 
-    //HTML BUTTON
-    <button id="my_button" data-id="5"></button>
-    
-    var my_selector = __.$('#my_button');
-    
-    my_selector.data('id'); // Returns 5
-    my_selector.data('id', 10); // Assign 10. 
-    
-    //RESULT OF ASSIGN
-    <button id="my_button" data-id="10"></button>
-    
+```html
+<button id="my_button" data-id="5"></button>
+```
+```js
+var my_selector = __.$('#my_button');
+
+my_selector.data('id'); // Returns 5
+my_selector.data('id', 10); // Assign 10. 
+```
+//RESULT OF ASSIGN
+```html
+<button id="my_button" data-id="10"></button>
+```    
     
 **Method `.prop('prop_value')`**
 
