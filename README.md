@@ -54,13 +54,13 @@ DOM Tools
 **Attribute `exist`**
 
 *(Verify DOM element existence)*
-    
-    ```js
-        var my_selector = __.$('.dom_to_verify');
-        if(my_selector.exist){
-            //TRUE if my_selector exist in DOM tree
-        }
-    ```
+
+```js
+    var my_selector = __.$('.dom_to_verify');
+    if(my_selector.exist){
+        //TRUE if my_selector exist in DOM tree
+    }
+```
     
 **Method `.object()`**
 
