@@ -1385,8 +1385,10 @@ __.$(document).ready(function(){
         
     template.my_view(data, function(my_html){
         //The parsed Template my_html
+        __.$('.my_container').html(my_html);
         
-        //RESULT
+       ```html 
+        //RESULT of parsed Template stored in my_html
         
         <div class="reports_info">
             <table>
@@ -1405,6 +1407,7 @@ __.$(document).ready(function(){
                     </tr>
             </table>
         </div>
+        ````
     })
     
     //My code
