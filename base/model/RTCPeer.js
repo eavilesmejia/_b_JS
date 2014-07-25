@@ -25,7 +25,7 @@ var WARNING_RTC = {
 var RTCPeer = function () {
     /**Variables*/
     var _proto = this.__proto__,
-        _navigator = this.get_nav(),
+        _navigator = _.get_nav(),
         _answerDone = false,
         _callDone = false,
         _videoAudioMandatory = _navigator.nav != 'firefox' ? {
@@ -100,7 +100,7 @@ var RTCPeer = function () {
     _proto.setLocalDescription = function (sdp) {
         var self = this;
 
-        self.warning('Signaling.. ');
+        _.warning('Signaling.. ');
         self.peer.setLocalDescription(sdp);
         self.sdp = sdp;
 
@@ -108,14 +108,14 @@ var RTCPeer = function () {
 
     _proto.setRemoteDescription = function (msg, callback) {
         var self = this;
-        self.warning('Receiving Singal..');
+        _.warning('Receiving Singal..');
         self.remoteDescription = new _sdp(msg.sdp);
         self.peer.setRemoteDescription(self.remoteDescription, callback);
     };
 
     _proto.addIceCandidate = function (msg) {
         var self = this;
-        self.warning('Receiving Candidate..');
+        _.warning('Receiving Candidate..');
         self.peer.addIceCandidate(new _ice({
             sdpMLineIndex: msg.sdpMLineIndex,
             candidate: msg.candidate
@@ -131,7 +131,7 @@ var RTCPeer = function () {
         var self = this;
 
         self.peer.createOffer(callback, function (e) {
-            self.error('ERROR OFFER' + e);
+            _.error('ERROR OFFER' + e);
         }, _videoAudioMandatory);
         _callDone = true;
 
@@ -146,7 +146,7 @@ var RTCPeer = function () {
         var self = this;
 
         self.peer.createAnswer(callback, function (e) {
-            self.error('ERROR ANSWER ' + e);
+            _.error('ERROR ANSWER ' + e);
         }, _videoAudioMandatory);
         _answerDone = true;
 
@@ -204,7 +204,7 @@ var RTCPeer = function () {
 
     _proto.connectPeer = function () {
         var self = this;
-        self.warning('Peer Seteado');
+        _.warning('Peer Seteado');
         var optional = {
                 optional: []
             },
@@ -351,7 +351,7 @@ var RTCPeer = function () {
     _proto.createChannel = function (name, conf) {
         var self = this;
         if (!self.peer) {
-            self.error(WARNING_RTC.ERROR.NOTPEER);
+            _.error(WARNING_RTC.ERROR.NOTPEER);
         }
 
         self.channel = self.peer.createChannel(name, self.extend(conf, {
@@ -382,7 +382,7 @@ var RTCPeer = function () {
     _proto.channelSend = function (msg) {
         var self = this;
         if (!self.channel) {
-            self.error(WARNING_RTC.ERROR.NOTCHANNEL);
+            _.error(WARNING_RTC.ERROR.NOTCHANNEL);
         }
         self.channel.send(msg);
 
@@ -391,7 +391,7 @@ var RTCPeer = function () {
     _proto.closeChannel = function () {
         var self = this;
         if (!self.channel) {
-            self.error(WARNING_RTC.ERROR.NOTCHANNEL);
+            _.error(WARNING_RTC.ERROR.NOTCHANNEL);
         }
 
         self.channel.close();
