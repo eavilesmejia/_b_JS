@@ -1340,7 +1340,7 @@ it is worth briefly discussing JavaScript templating and its relationship to vie
 *Example:*
 
 ```html
-//Creating Template /templates/reports/index.html
+<!--Creating Template /templates/reports/index.html -->
 <div class="reports_info">
     <table>
         <tr>
