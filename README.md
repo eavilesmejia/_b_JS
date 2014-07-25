@@ -1387,26 +1387,6 @@ __.$(document).ready(function(){
         //The parsed Template my_html
         __.$('.my_container').html(my_html);
         
-        //RESULT of parsed Template stored in my_html
-        
-        *<div class="reports_info">
-            <table>
-                <th>Travel Info</th>
-                    <tr>
-                        <td>
-                            <div><strong>Name:</strong> <span>Juan</span></div>
-                            <div><strong>Lastname:</strong> <span>Rodriguez</span></div>
-                        </td>
-                    </tr> 
-                    <tr>
-                        <td>
-                            <div><strong>Name:</strong> <span>Pedro</span></div>
-                            <div><strong>Lastname:</strong> <span>Martinez</span></div>
-                        </td>
-                    </tr>
-            </table>
-        </div>*
-
     })
     
     //My code
