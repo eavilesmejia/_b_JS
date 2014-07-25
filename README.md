@@ -174,18 +174,18 @@ my_selector.data({'textContent': My Other Example}); // Assign My Other Example.
 
 *(Attr Object. If attr_value object type is passed, it assigned, else if attr_value is string type, then value is returned)*
 ```html
-    //HTML BUTTON
-    <a href="http://out.com">My Link</a>
+//HTML BUTTON
+<a href="http://out.com">My Link</a>
 ```
 ```js
-    var my_selector = __.$('a');
-    
-    my_selector.attr('href'); // Returns http://out.com
-    my_selector.attr({'href': 'http://inner.com'}); // Assign http://inner.com. 
+var my_selector = __.$('a');
+
+my_selector.attr('href'); // Returns http://out.com
+my_selector.attr({'href': 'http://inner.com'}); // Assign http://inner.com. 
 ```
 ```html
-    //RESULT OF ASSIGN
-    <a href="http://inner.com">My Link</a>
+//RESULT OF ASSIGN
+<a href="http://inner.com">My Link</a>
 ``` 
 **Method `.removeAttr(attr_name)`**
 
@@ -239,43 +239,48 @@ second_div.after('<div class="third_div"></div>');
 **Method `.before(html || _$ Object)`**
 
 *(Insert DOM object before element)*
+```js
+var my_selector = __.$('.third_div'),
+    second_div = __.$('.second_div');
 
-    var my_selector = __.$('.third_div'),
-        second_div = __.$('.second_div');
-    
-    my_selector.before(second_div);
-    second_div.before('<div class="first_div"></div>');
-    
+my_selector.before(second_div);
+second_div.before('<div class="first_div"></div>');
+```    
     
 **Method `.append(html || _$ Object)`**
 
 *(Append DOM object)*
-  
-    var my_selector = __.$('.third_div'),
-        second_div = __.$('.second_div');
-    
-    my_selector.append(second_div);
-    my_selector.append('<div class="first_div"></div>');
 
+```js 
+var my_selector = __.$('.third_div'),
+    second_div = __.$('.second_div');
+
+my_selector.append(second_div);
+my_selector.append('<div class="first_div"></div>');
+```
 
 **Method `.html('html')`**
 
 *(Create HTML in DOM object. If html is passed is assigned else is returned)*
-  
-    var my_selector = __.$('div');
-    
-    my_selector.html('<div></div>');
-    my_selector.html('Text'); // Replace div
-    my_selector.html(); //Return "Text" 
+
+```js  
+var my_selector = __.$('div');
+
+my_selector.html('<div></div>');
+my_selector.html('Text'); // Replace div
+my_selector.html(); //Return "Text" 
+```
     
 **Method `.text('text')`**
 
 *(Create Text in DOM object. If text is passed is assigned else is returned)*
-  
-    var my_selector = __.$('div');
-    
-    my_selector.text('Text'); //Text node created
-    my_selector.text(); //Return Text
+
+```js  
+var my_selector = __.$('div');
+
+my_selector.text('Text'); //Text node created
+my_selector.text(); //Return Text
+```
     
 **Method `.val('text')`**
 
