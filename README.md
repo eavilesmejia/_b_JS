@@ -50,7 +50,7 @@ var my_selector = __.$('.selector:pseudo');
 var my_selector = __.$('.selector_parent .selector_child');
 var my_selector = __.$('#selector');
 
-//Example Get All:
+//Example Selector All:
 
 var my_selector = __.$('.selector+'); //Get all .selector in DOM
 
