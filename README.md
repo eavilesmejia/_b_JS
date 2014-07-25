@@ -99,28 +99,28 @@ my_selector.load(function(){
 **Method `.filter(filter, callback, e_handler(optional))`**
 
 *(Filter pattern match)*
+```js
+var my_selector = __.$('.selector');
 
-    var my_selector = __.$('.selector');
-    
-    my_selector.children(function(child){
-        __.$(child).filter('.child_1', function(){
+my_selector.children(function(child){
+    __.$(child).filter('.child_1', function(){
 
-            /*Is .child_1 inside .selector ?*/
-            
-        },function(){
-            /*Not founded*/
-        })
+        /*Is .child_1 inside .selector ?*/
+        
+    },function(){
+        /*Not founded*/
     })
-    
+})
+```    
     
 **Method `.empty(void)`**
 
 *(Empty DOM Object)*
+```js
+var my_selector = __.$('.selector');
 
-    var my_selector = __.$('.selector');
-    
-    my_selector.empty()
-   
+my_selector.empty(); // Dom Empty
+```   
    
 **Method `.clone(bool)`**
 
