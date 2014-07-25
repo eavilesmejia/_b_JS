@@ -293,7 +293,7 @@ my_selector.val(); //Return My value
 <input type="text" value="My value">
 ```
 
-**Method `.hide()`**
+**Method `.hide(void)`**
 
 *(Hide DOM Object)*
 
@@ -303,7 +303,7 @@ var my_selector = __.$('div');
 my_selector.hide(); //Element display none
 ```
 
-**Method `.show()`**
+**Method `.show(void)`**
 
 *(Show DOM Object)*
 
@@ -321,7 +321,7 @@ my_selector.show(); //Element display block
 </div>
 ```
 ```js
-var my_selector = __.$(child');
+var my_selector = __.$('.child');
 
 my_selector.parent(function(parent){
     __.$(parent) // Object class parent
@@ -340,7 +340,7 @@ my_selector.parent(function(parent){
 </div>
 ```
 ```js    
-var my_selector = __.$('.grandson);
+var my_selector = __.$('.grandson');
 
 my_selector.parents('.parent', function(parent){
     __.$(parent) // Object class parent
@@ -356,7 +356,7 @@ my_selector.parents('.parent', function(parent){
 </div>
 ```
 ```js    
-var my_selector = __.$('parent');
+var my_selector = __.$('.parent');
 
 my_selector.parent(function(child){
     __.$(child) // Object class child
