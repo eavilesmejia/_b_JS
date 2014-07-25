@@ -1339,8 +1339,10 @@ it is worth briefly discussing JavaScript templating and its relationship to vie
 //Creating Template reports.html
 <div class="reports_info">
     <table>
-        <th>Travel Info</th>
-            <% (for |data| in |info|) %>
+        <tr>
+            <th>Travel Info</th>
+        </tr>
+        <% (for |data| in |info|) %>
             <tr>
                 <td>
                     <div><strong>Name:</strong> <span>{data.name}</span></div>
