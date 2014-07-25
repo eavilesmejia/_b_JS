@@ -259,7 +259,7 @@ my_selector.append(second_div);
 my_selector.append('<div class="first_div"></div>');
 ```
 
-**Method `.html('html')`**
+**Method `.html(html)`**
 
 *(Create HTML in DOM object. If html is passed is assigned else is returned)*
 
@@ -271,7 +271,7 @@ my_selector.html('Text'); // Replace div
 my_selector.html(); //Return "Text" 
 ```
     
-**Method `.text('text')`**
+**Method `.text(text)`**
 
 *(Create Text in DOM object. If text is passed is assigned else is returned)*
 
@@ -282,7 +282,7 @@ my_selector.text('Text'); //Text node created
 my_selector.text(); //Return Text
 ```
     
-**Method `.val('text')`**
+**Method `.val(text)`**
 
 *(Assign value in DOM object. If value is passed is assigned else is returned)*
 ```html
@@ -327,7 +327,7 @@ my_selector.show(); //Element display block
 </div>
 ```
 ```js
-var my_selector = __.$('child');
+var my_selector = __.$(child');
 
 my_selector.parent(function(parent){
     __.$(parent) // Object class parent
@@ -356,34 +356,37 @@ my_selector.parents('.parent', function(parent){
 **Method `.children(callback)`**
 
 *(Get Child Nodes. Callback Needed)*
+```html
+<div class="parent">
+    <div class="child"></div>
+</div>
+```
+```js    
+var my_selector = __.$('parent');
 
-    //HTML
-    <div class="parent">
-        <div class="child"></div>
-    </div>
-    
-    var my_selector = __.$('parent');
-    
-    my_selector.parent(function(child){
-        __.$(child) // Object class child
-    }); 
+my_selector.parent(function(child){
+    __.$(child) // Object class child
+});
+```
     
     
 **Method `.next(callback)`**
 
 *(Get next sibling Node. Callback Needed)*
 
-    //HTML
-    <div class="parent">
-        <div class="child_1"></div>
-        <div class="child_2"></div>
-    </div>
-    
-    var my_selector = __.$('child_1');
-    
-    my_selector.next(function(sibling){
-        __.$(sibling) // Object class child_2
-    }); 
+```html
+<div class="parent">
+    <div class="child_1"></div>
+    <div class="child_2"></div>
+</div>
+```
+```js
+var my_selector = __.$('child_1');
+
+my_selector.next(function(sibling){
+    __.$(sibling) // Object class child_2
+});
+```
     
     
 **Method `.nexts(filter, callback)`**
