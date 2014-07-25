@@ -4,7 +4,7 @@
   "keywords"      : ["model", "view", "controller", "router", "server", "client", "browser"],
   "author"        : "Geolffrey Mena <gmjun2000@gmail.com>",
   "devDependencies": {
-    "uglifyjs": "uglify-js"
+    "uglifyjs": "*"
   },
   "scripts": {
     "build": "uglifyjs __b__.js --mangle --source-map -o v-min.js -c"
