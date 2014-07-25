@@ -582,10 +582,10 @@ my_selector.offset() // return {top:int,left:int,bottom:int,right:int}
 
 ```html
  <ul class="parent">
-       <li>B</li>
-       <li>A</li>
-       <li>D</li>
-       <li>C</li>
+   <li>B</li>
+   <li>A</li>
+   <li>D</li>
+   <li>C</li>
  </ul>
 ```
 ```js
@@ -632,28 +632,29 @@ Events
 **Method `.addListener(event, delegate(optional), callback)`**
 
 *(Add event listener to object)*
+```js
+var body = __.$('body'),
+    my_selector = __.$('.selector');
+    
+//Event delegation
+body.addListener('click', '.selector', function(e){
+    
+    /*My Code*/
+    
+}).addListener('keydown','textarea', function(e){
 
-    var body = __.$('body'),
-        my_selector = __.$('.selector');
-        
-    //Event delegation
-    body.addListener('click', '.selector', function(e){
-        
-        /*My Code*/
-        
-    }).addListener('keydown','textarea', function(e){
+    /*My Code*/
     
-        /*My Code*/
-        
-    })
+})
+
+//Event assign
+my_selector('click', function(e){
     
-    //Event assign
-    my_selector('click', function(e){
-        
-        /*My Code*/
-        
-    })
+    /*My Code*/
     
+})
+```
+
 **Method removeListener in dev**
     
 Helpers
@@ -662,40 +663,40 @@ Helpers
 **Method `.limit_input_box(event Object, max_input_length)`**
 
 *(Validate if input value length is less to max_input_length)*
-    
-    __.$('input[type="text"]').addListener('keydown', function(e){
-        __.limit_input_box(e,50); // If input times is greater than 50, the event is prevented   
-    
-        //Code
-    })
-      
+```js    
+__.$('input[type="text"]').addListener('keydown', function(e){
+    __.limit_input_box(e,50); // If input times is greater than 50, the event is prevented   
+
+    //Code
+})
+```      
       
 **Method `.cartesian_plane($ Object || Object, all)`**
 
 *(Return the cartesian plane object info. If param all is passed return all selector matches info)*
-    
-    var my_selector = __.$('input[type="text"]');
-    
-    __.cartesian_plane(my_selector);
-    //  return {
-                   bottom: 565
-                   left: 0
-                   right: 346
-                   top: 0
-                   height: 565
-                   width: 366
-               }
+```js    
+var my_selector = __.$('input[type="text"]');
 
+__.cartesian_plane(my_selector);
+//  return {
+               bottom: 565
+               left: 0
+               right: 346
+               top: 0
+               height: 565
+               width: 366
+           }
+```
 
 **Method `.get_element_index(Dom Object)`**
 
 *(Return the index position in DOM tree)*
-    
-    var my_selector = __.$('input[type="text"]').object();
-    
-    __.get_element_index(my_selector);
-    //  return 5 assuming position
+```js    
+var my_selector = __.$('input[type="text"]').object();
 
+__.get_element_index(my_selector);
+//  return 5 assuming position
+```
 
 B Methods
 =======
@@ -705,46 +706,48 @@ Validation
 **Method `.assert(param, msg)`**
 
 *(Validate if a param is seted). param needed, msg default = Param needed*
-    
-      function test (param){
-        __.assert(param,'Param is needed');
-        alert(param);
-      }
-      
-      test(); //assert is executed
-      test('Param passed'); //assert is omitted
-      
+```js    
+function test (param){
+__.assert(param,'Param is needed');
+alert(param);
+}
+
+test(); //assert is executed
+test('Param passed'); //assert is omitted
+```      
 
 **Method `.is_array(param)`**
 
 *(Validate if param is Array)*
-    
-     var no_array = 'I am not Array', 
-         my_array = [1,2,3];
-         
-     __.is_array(no_array) // Return FALSE
-     __.is_array(my_array) // Return TRUE
+```js    
+var no_array = 'I am not Array', 
+ my_array = [1,2,3];
+ 
+__.is_array(no_array) // Return FALSE
+__.is_array(my_array) // Return TRUE
+```
 
 **Method `.is_object(param)`**
 
 *(Validate if param is Object)*
-    
-     var no_object = 'I am not Object', 
-         my_object = {a:1,b:2,c:3};
-         
-     __.is_object(no_object) // Return FALSE
-     __.is_object(my_object) // Return TRUE    
-
+```js    
+var no_object = 'I am not Object', 
+ my_object = {a:1,b:2,c:3};
+ 
+__.is_object(no_object) // Return FALSE
+__.is_object(my_object) // Return TRUE    
+```
   
 **Method `.is_global(param)`**
 
 *(Validate if param is Global Dom element. Example = Window || Document || ...)*
-    
-     var no_global = __.$('body').object() || document.body, 
-         my_global = document;
-         
-     __.is_global(no_global) // Return FALSE
-     __.is_global(my_global) // Return TRUE
+```js    
+var no_global = __.$('body').object() || document.body, 
+ my_global = document;
+ 
+__.is_global(no_global) // Return FALSE
+__.is_global(my_global) // Return TRUE
+```
         
 **Method `.is_$(param)`**
 
