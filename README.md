@@ -605,8 +605,8 @@ my_selector.sort() // Sort Element by default innerHtml prop, order asc
 
 *(Trigger Event. Event and Callback Needed)*
 ```js
-    var body = __.$('body'),
-    my_selector = __.$('.div');
+var body = __.$('body'),
+my_selector = __.$('.div');
 
 my_select.addEventListener('click', function(){
     alert('I am clicked');
