@@ -1217,7 +1217,7 @@ they both update the view when the model changes and update the model when the u
 
 *In B drivers are handled from a dedicated environment (application modules), not combined application*
 
-*The Controllers are located in the folder "/controller/module_name", and are called to our site with script tags right after call _b_ core*
+*The Controllers are located in the folder "/controller/module_name/init.js", and are called to our site with script tags right after call _b_ core*
 
 *Example:*
 
@@ -1294,7 +1294,7 @@ Design pattern literature commonly refers to views as 'dumb' given that their kn
 
 *In B views are handled from a dedicated environment (application modules), not combined application*
 
-*The Views are located in the folder "/views/module_name", and are called inside the controller*
+*The Views are located in the folder "/views/module_name/init.js", and are called inside the controller*
 
 *Example:*
 
@@ -1334,7 +1334,7 @@ it is worth briefly discussing JavaScript templating and its relationship to vie
 
 *In B templates are handled from a dedicated environment (application modules), not combined application*
 
-*The Templates are located in the folder "/templates/module_name", and are called inside the controller*
+*The Templates are located in the folder "/templates/module_name/tpl_name.html", and are called inside the controller*
 
 *Example:*
 
