@@ -134,7 +134,7 @@ _clone_with_child = my_selector.clone(true); //Clone Childs
 _clone_not_child = my_selector.clone();
 ```    
     
-**Method `.data('data_name', 'data_value')`**
+**Method `.data(data_name, data_value)`**
 
 *(Data Object. If data_value is passed, it assigned to object, else it returned )*
 
@@ -152,7 +152,7 @@ my_selector.data('id', 10); // Assign 10.
 <button id="my_button" data-id="10"></button>
 ```    
     
-**Method `.prop('prop_value')`**
+**Method `.prop(prop_value)`**
 
 *(Prop Object. If prop_value object type is passed, it assigned, else if prop_value is string type, then value is returned)*
 
@@ -170,7 +170,7 @@ my_selector.data({'textContent': My Other Example}); // Assign My Other Example.
 <button id="my_button">My Other Example</button>
 ```
 
-**Method `.attr('attr_value')`**
+**Method `.attr(attr_value)`**
 
 *(Attr Object. If attr_value object type is passed, it assigned, else if attr_value is string type, then value is returned)*
 ```html
@@ -187,7 +187,7 @@ my_selector.data({'textContent': My Other Example}); // Assign My Other Example.
     //RESULT OF ASSIGN
     <a href="http://inner.com">My Link</a>
 ``` 
-**Method `.removeAttr('attr_name')`**
+**Method `.removeAttr(attr_name)`**
 
 *(Remove Attr from Object. Attr_name needed )*
 
@@ -205,7 +205,7 @@ my_selector.removeAttr('href'); // Remove href
 <a>My Link</a>
 ```
 
-**Method `.css('style_name')`**
+**Method `.css(object | style_name)`**
 
 *(CSS Object. If style_value object type is passed, it assigned, else if css_value is string type, then value is returned)*
 
@@ -228,12 +228,13 @@ my_selector.css({'color': '#666'}); // Assign color:#666
 
 *(Insert DOM object after element)*
 
-    var my_selector = __.$('.first_div'),
-        second_div = __.$('.second_div');
-    
-    my_selector.after(second_div);
-    second_div.after('<div class="third_div"></div>');
-    
+```js
+var my_selector = __.$('.first_div'),
+    second_div = __.$('.second_div');
+
+my_selector.after(second_div);
+second_div.after('<div class="third_div"></div>');
+```
     
 **Method `.before(html || _$ Object)`**
 
