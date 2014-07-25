@@ -831,53 +831,57 @@ __.is_set(my_set) // Return TRUE
 **Method `.is_empty(param)`**
 
 *(Validate if param is empty.)*
-    
-     var empty = '' || [] || ' ', 
-         no_empty = [1,2,3,4] || 'Not Empty';
-         
-     __.is_empty(no_empty) // Return FALSE
-     __.is_empty(empty) // Return TRUE
+```js    
+var empty = '' || [] || ' ', 
+ no_empty = [1,2,3,4] || 'Not Empty';
+ 
+__.is_empty(no_empty) // Return FALSE
+__.is_empty(empty) // Return TRUE
+```
      
 **Method `.is_url(param)`**
 
 *(Validate if param is URL.)*
-    
-     var no_url = 'String Example', 
-         my_url = 'http://google.com' || 'https://google.com';
-         
-     __.is_url(no_url) // Return FALSE
-     __.is_url(my_url) // Return TRUE
+```js    
+var no_url = 'String Example', 
+ my_url = 'http://google.com' || 'https://google.com';
+ 
+__.is_url(no_url) // Return FALSE
+__.is_url(my_url) // Return TRUE
+```
      
 **Method `.is_mail(param)`**
 
 *(Validate if param is mail.)*
- 
-     var no_email = 'String Example', 
-         my_email = 'i_am_mail@gmail.com';
-          
-     __.is_mail(no_mail) // Return FALSE
-     __.is_mail(my_mail) // Return TRUE
-     
+```js
+var no_email = 'String Example', 
+ my_email = 'i_am_mail@gmail.com';
+  
+__.is_mail(no_mail) // Return FALSE
+__.is_mail(my_mail) // Return TRUE
+```
+
 **Method `.is_json(param)`**
 
 *(Validate if param is JSON.)*
- 
-     var no_json = {a:1,b:2}, 
-         my_json = '{"a":"1","b":"2"}';
-          
-     __.is_json(no_json) // Return FALSE
-     __.is_json(my_json) // Return TRUE
-     
+```js 
+var no_json = {a:1,b:2}, 
+ my_json = '{"a":"1","b":"2"}';
+  
+__.is_json(no_json) // Return FALSE
+__.is_json(my_json) // Return TRUE
+```
+
 **Method `.is_number(param)`**
 
 *(Validate if param is Number.)*
- 
-     var no_number = 'No Number', 
-         my_number = '123' || 123;
-          
-     __.is_number(no_number) // Return FALSE
-     __.is_number(my_number) // Return TRUE
-     
+```js
+var no_number = 'No Number', 
+ my_number = '123' || 123;
+  
+__.is_number(no_number) // Return FALSE
+__.is_number(my_number) // Return TRUE
+```
 
 Helpers
 ----------
@@ -885,49 +889,52 @@ Helpers
 **Method `.warning(msg)`**
 
 *(Show console warning.)*
-           
-     __.warning('Field Empty'); // 04:12:05 PM -> Field Empty
+```js           
+__.warning('Field Empty'); // 04:12:05 PM -> Field Empty
+```
      
 **Method `.error(msg)`**
 
 *(Throw console error.)*
-           
-     __.error('No param'); // 04:12:05 PM -> No param
+```js           
+__.error('No param'); // 04:12:05 PM -> No param
+```
   
 **Method `.interval(callback, conf)`**
 
 *(Set interval function based in thread process)*
-           
-     //param conf example = {
-                      delay: 0x32, // Time to wait between each loop 
-                      limit: 0xA // max iterations if negative value is passed it is descendant
-                    }
-     _.interval(function (x) {
-                 x // each value since 0 to limit
-             }, conf);
-             
+```js           
+//param conf example = {
+              delay: 0x32, // Time to wait between each loop 
+              limit: 0xA // max iterations if negative value is passed it is descendant
+            }
+_.interval(function (x) {
+         x // each value since 0 to limit
+     }, conf);
+```
+     
 **Method `.each(object || array, callback)`**
 
 *(Intuitive objects or tour arrangements)*
-           
-     __.each([1,2,3], function(v,i,p){
-        v // Element
-        i // Index or Key
-        p // Loop Control { p.last or p.first}
-        
-        v (1)
-        i (0)
-        p (p.first is TRUE)
-        
-        v (2)
-        i (1)
-        p (p.first is FALSE and p.last is FALSE)
-        
-        v (3)
-        i (2)
-        p (p.first is FALSE and p.last is TRUE)
-     })
-
+```js           
+__.each([1,2,3], function(v,i,p){
+    v // Element
+    i // Index or Key
+    p // Loop Control { p.last or p.first}
+    
+    v (1)
+    i (0)
+    p (p.first is TRUE)
+    
+    v (2)
+    i (1)
+    p (p.first is FALSE and p.last is FALSE)
+    
+    v (3)
+    i (2)
+    p (p.first is FALSE and p.last is TRUE)
+})
+```
 **Method `.callback_audit(callback, param1, param2, ..)`**
 
 *(This verifies that the callback set, if so then runs it with the given parameters)*
