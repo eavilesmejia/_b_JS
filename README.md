@@ -481,89 +481,98 @@ my_selector.removeClass('div') // If have the class its removed
 **Method `.fadeOut(mseconds)`**
 
 *(Fade Out element. If mseconds is passed it used for time fade else default is 50)*
+```js
+var my_selector = __.$('.div');
 
-    var my_selector = __.$('.div');
-    
-    my_selector.fadeOut(100)
+my_selector.fadeOut(100)
+```
 
 **Method `.fadeIn(mseconds)`**
 
 *(Fade In element. If mseconds is passed it used for time fade else default is 50)*
+```js
+var my_selector = __.$('.div');
 
-    var my_selector = __.$('.div');
-    
-    my_selector.fadeIn(100)
+my_selector.fadeIn(100)
+```
 
 **Method `.width(int)`**
 
 *(Assign or return width of element. If int value is passed its assigned to element else return the width )*
+```js
+var my_selector = __.$('.div');
 
-    var my_selector = __.$('.div');
-    
-    my_selector.width(100) // Assign 100 to width
-    my_selector.width() // Return width
+my_selector.width(100) // Assign 100 to width
+my_selector.width() // Return width
+```
     
 **Method `.height(int)`**
 
 *(Assign or return height of element. If int value is passed its assigned to element else return the height )*
+```js
+var my_selector = __.$('.div');
 
-    var my_selector = __.$('.div');
-    
-    my_selector.height(100) // Assign 100 to height
-    my_selector.height() // Return height
+my_selector.height(100) // Assign 100 to height
+my_selector.height() // Return height
+```
 
 **Method `.is(class|pseudo-class|prop)`**
 
 *(Verify element. Para needed )*
+```js
+var my_selector = __.$('.div');
 
-    var my_selector = __.$('.div');
-    
-    if(my_selector.is('.div')){
-         //TRUE IF my_selector is .div
-    }
-    
+if(my_selector.is('.div')){
+     //TRUE IF my_selector is .div
+}
+```   
+ 
 **Method `.get(element)`**
 
 *(Return child element. Param element needed)*
     
-    //HTML
-        <div class="parent">
-            <div class="child">
-                <div class="grandson"></div>
-            </div>
-    </div>
-    
-    var my_selector = __.$('.parent');
-    
-    my_selector.get('.child') // Return .child
+```html
+<div class="parent">
+        <div class="child">
+            <div class="grandson"></div>
+        </div>
+</div>
+```
+```js
+var my_selector = __.$('.parent');
+
+my_selector.get('.child') // Return .child
+```
 
 **Method `.each(callback)`**
 
 *(Loop childs of element. Param callback needed)*
     
-    //HTML
-    <div class="parent">
-        <div class="child"></div>
-        <div class="child2"></div>
-    </div>
+```html
+<div class="parent">
+    <div class="child"></div>
+    <div class="child2"></div>
+</div>
+```
+```js    
+var my_selector = __.$('.parent');
+
+my_selector.each(function(v,i,p){
+    v // Element
+    i // Index
+    p // Loop Control { p.last or p.first}
     
-    var my_selector = __.$('.parent');
+    v (.child)
+    i (0)
+    p (p.first is TRUE)
     
-    my_selector.each(function(v,i,p){
-        v // Element
-        i // Index
-        p // Loop Control { p.last or p.first}
-        
-        v (.child)
-        i (0)
-        p (p.first is TRUE)
-        
-        v (.child2)
-        i (1)
-        p (p.first is FALSE and p.last is TRUE)
-        
-    })
+    v (.child2)
+    i (1)
+    p (p.first is FALSE and p.last is TRUE)
     
+})
+```
+
 **Method `.offset(object)`**
 
 *(Assign or return offset element. If object is passed its assigned to element else return the offset)*
