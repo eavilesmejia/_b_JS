@@ -1331,7 +1331,7 @@ it is worth briefly discussing JavaScript templating and its relationship to vie
 
 *In B templates are handled from a dedicated environment (application modules), not combined application*
 
-*The Views are located in the folder "/templates/module_name", and are called inside the controller*
+*The Templates are located in the folder "/templates/module_name", and are called inside the controller*
 
 *Example:*
 
@@ -1373,14 +1373,8 @@ __.$(document).ready(function(){
 
     var template = new _.Template,
         data = {info : [
-                    {
-                        name : 'Juan',
-                        lastname : 'Rodriguez'
-                    },
-                    {
-                        name : 'Pedro',
-                        lastname : 'Martinez'
-                    } 
+                    { name : 'Juan', lastname : 'Rodriguez'},
+                    { name : 'Pedro',lastname : 'Martinez'} 
                ]}; // Data used in the view
         
     template.my_view(data, function(my_html){
