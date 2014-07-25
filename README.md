@@ -1315,10 +1315,11 @@ __.$(document).ready(function(){
        
     var template = new _.Template,
         data = {name : 'Juan', lastname : 'Rodriguez'}; // Data used in the view
-        
-    template.my_view(data, function(my_html){
-        //The parsed Template my_html do something.
-    })
+    _.include('view/my_view', function(){    
+        template.my_view(data, function(my_html){
+            //The parsed Template my_html do something.
+        })
+    });
     
     //My code
 })
