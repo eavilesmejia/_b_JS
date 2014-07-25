@@ -286,7 +286,6 @@ my_selector.text(); //Return Text
 
 *(Assign value in DOM object. If value is passed is assigned else is returned)*
 ```html
-//HTML INPUT
 <input type="text" value="">
 ```
 ```js
@@ -323,7 +322,6 @@ my_selector.show(); //Element display block
 
 *(Get Dom Parent first. Callback Needed)*
 ```html
-//HTML
 <div class="parent">
     <div class="child"></div>
 </div>
@@ -340,18 +338,20 @@ my_selector.parent(function(parent){
 
 *(Get Dom Parent Until. Parent_class and Callback Needed)*
 
-    //HTML
-    <div class="parent">
-        <div class="child">
-            <div class="grandson"></div>
-        </div>
+```html
+<div class="parent">
+    <div class="child">
+        <div class="grandson"></div>
     </div>
-    
-    var my_selector = __.$('.grandson);
-    
-    my_selector.parents('.parent', function(parent){
-        __.$(parent) // Object class parent
-    }); 
+</div>
+```
+```js    
+var my_selector = __.$('.grandson);
+
+my_selector.parents('.parent', function(parent){
+    __.$(parent) // Object class parent
+});
+ ```
     
 **Method `.children(callback)`**
 
