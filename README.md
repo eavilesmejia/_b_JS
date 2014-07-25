@@ -576,36 +576,40 @@ my_selector.each(function(v,i,p){
 **Method `.offset(object)`**
 
 *(Assign or return offset element. If object is passed its assigned to element else return the offset)*
+```js
+var my_selector = __.$('.div');
 
-    var my_selector = __.$('.div');
-    
-    my_selector.offset({x:10,y:10}) // Assign position x and y to element
-    my_selector.offset() // return {top:int,left:int,bottom:int,right:int}
+my_selector.offset({x:10,y:10}) // Assign position x and y to element
+my_selector.offset() // return {top:int,left:int,bottom:int,right:int}
+```
  
 **Method `.sort(prop(optional) , bool (optional), elem(optional))`**
 
 *(Sort elements. If prop is passed is sorted by prop,if bool is true is order desc)*
 
-    //HTML
-     <ul class="parent">
-           <li>B</li>
-           <li>A</li>
-           <li>D</li>
-           <li>C</li>
-     </ul>
-    
-    var my_selector = __.$('.parent li');
-    
-    my_selector.sort() // Sort Element by default innerHtml prop, order asc
-    
-    //RESULT ASC
-    <ul class="parent">
-       <li>A</li>
+```html
+ <ul class="parent">
        <li>B</li>
-       <li>C</li>
+       <li>A</li>
        <li>D</li>
-    </ul>
+       <li>C</li>
+ </ul>
+```
+```js
+var my_selector = __.$('.parent li');
 
+my_selector.sort() // Sort Element by default innerHtml prop, order asc
+```
+```html
+
+//RESULT ORDER ASC
+<ul class="parent">
+   <li>A</li>
+   <li>B</li>
+   <li>C</li>
+   <li>D</li>
+</ul>
+```
 **Method `.trigger(event, callback)`**
 
 *(Trigger Event. Event and Callback Needed)*
