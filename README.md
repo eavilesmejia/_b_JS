@@ -417,39 +417,44 @@ my_selector.nexts('.child_2', function(siblings){
 
 *(Get next sibling Node. Filter and Callback Needed)*
 
-    //HTML
-    <div class="parent">
-        <div class="child_1"></div>
-        <div class="child_2"></div>
-        <div class="child_2"></div>
-        <div class="need_be_found"></div>
-    </div>
-    
-    var my_selector = __.$('parent');
-    
-    my_selector.find('.need_be_found', function(found){
-          __.$(found) // Object class need_be_found is inside .parent?
-    }); 
+```html
+<div class="parent">
+    <div class="child_1"></div>
+    <div class="child_2"></div>
+    <div class="child_2"></div>
+    <div class="need_be_found"></div>
+</div>
+```
+```js
+var my_selector = __.$('parent');
+
+my_selector.find('.need_be_found', function(found){
+      __.$(found) // Object class need_be_found is inside .parent?
+});
+```
     
 **Method `.hasClass(elem, class)`**
 
 *(Verify Class in element. Return true if the class is founded in element else return false)*
-
-    var my_selector = __.$('.div');
-    if(__.hasClass(my_selector,'class2')){
-        //TRUE IF .div has the class2
-    }
+```js
+var my_selector = __.$('.div');
+if(__.hasClass(my_selector,'class2')){
+    //TRUE IF .div has the class2
+}
+```
    
 **Method `.addClass(class)`**
 
 *(Add a new class to an element)*
+```js
+var my_selector = __.$('.div');
 
-    var my_selector = __.$('.div');
-    
-    my_selector.addClass('div2') // Add the class div2 to .div
-   
-    //RESULT
-    <div class="div div2"></div>
+my_selector.addClass('div2') // Add the class div2 to .div
+```
+```html
+//RESULT
+<div class="div div2"></div>
+```
    
 **Method `.toggleClass(class)`**
 
