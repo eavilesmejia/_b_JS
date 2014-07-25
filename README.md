@@ -1399,6 +1399,73 @@ __.$(document).ready(function(){
 B Libs
 ========
 
+Form
+-------
+The Form library allows rapid processing of forms, with simple and efficient methods.
+
+```html
+<form id="my_form">
+    
+    <!-- If value is empty throw error "empty"-->
+    <label for="my_name">Name</label>
+    <input type="text" name="name" id="my_name" />
+    
+    <!-- If value is not valid mail throw error "invalid_mail"-->
+    <label for="my_email">Email</label>
+    <input type="text" name="email" id="my_email" data-email="true" />
+    
+    <!-- If value not match with custom throw error "invalid_custom"-->
+    <label for="my_phone">Phone</label>
+    <input type="text" name="phone" id="my_phone" data-custom="/[0-9]-[0-5]/g" />
+    
+    <!-- If value is higher to max throw error "overflow_chars"-->
+    <label for="my_code">Code</label>
+    <input type="text" name="code" id="my_code" data-max="8" />
+    
+    <!-- Skip validation-->
+    <label for="my_zip">Zip-Code</label>
+    <input type="text" name="zip" id="my_zip" data-skip="true" />
+          
+</form>
+```
+```js
+
+__.$(document).ready(function(){
+    _.include('lib/Form', function(){
+        var my_form = new Form;
+        
+        my_form.on('before', function(XHR){
+            //Event executed before send data
+        });
+        
+        my_form.on('complete', function(ajax_response){
+             //Event executed on request completed
+        });
+        
+        my_form.on('error', function(error){
+             //Event executed on error
+             
+             error object {
+                field: field, // the input that generated the error
+                error: error, // the error string (invalid_mail, invalid_custom,..)
+                coords: {x:100,y:200} // the position of the input
+             }
+        });
+        
+        
+        __.$('#my_form').addListener('submit', function(e){
+                my_form.method('POST'); // Set method
+                my_form.action('/contact/'); // Set url for Ajax Request
+                my_form.pack(e.target); // Pack the input values
+                my_form.submit(e) // Submit auto prevent default event
+        })
+
+    });
+
+});
+```
+
+
 *Pending Documentation*
 
 B Class
