@@ -1448,7 +1448,7 @@ __.$(document).ready(function(){
              error object {
                 field: field, // the input that generated the error
                 error: error, // the error string (invalid_mail, invalid_custom,..)
-                coords: {x:100,y:200} // the position of the input
+                coords: {x:100,y:200} // the position of the input that generated the error
              }
         });
         
