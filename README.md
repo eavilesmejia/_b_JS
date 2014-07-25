@@ -677,7 +677,7 @@ __.$('input[type="text"]').addListener('keydown', function(e){
 ```js    
 var my_selector = __.$('input[type="text"]');
 
-__.cartesian_plane(my_selector);
+_.cartesian_plane(my_selector);
 //  return {
                bottom: 565
                left: 0
@@ -694,7 +694,7 @@ __.cartesian_plane(my_selector);
 ```js    
 var my_selector = __.$('input[type="text"]').object();
 
-__.get_element_index(my_selector);
+_.get_element_index(my_selector);
 //  return 5 assuming position
 ```
 
@@ -708,7 +708,7 @@ Validation
 *(Validate if a param is seted). param needed, msg default = Param needed*
 ```js    
 function test (param){
-__.assert(param,'Param is needed');
+_.assert(param,'Param is needed');
 alert(param);
 }
 
@@ -723,8 +723,8 @@ test('Param passed'); //assert is omitted
 var no_array = 'I am not Array', 
  my_array = [1,2,3];
  
-__.is_array(no_array) // Return FALSE
-__.is_array(my_array) // Return TRUE
+_.is_array(no_array) // Return FALSE
+_.is_array(my_array) // Return TRUE
 ```
 
 **Method `.is_object(param)`**
@@ -734,8 +734,8 @@ __.is_array(my_array) // Return TRUE
 var no_object = 'I am not Object', 
  my_object = {a:1,b:2,c:3};
  
-__.is_object(no_object) // Return FALSE
-__.is_object(my_object) // Return TRUE    
+_.is_object(no_object) // Return FALSE
+_.is_object(my_object) // Return TRUE    
 ```
   
 **Method `.is_global(param)`**
@@ -745,8 +745,8 @@ __.is_object(my_object) // Return TRUE
 var no_global = __.$('body').object() || document.body, 
  my_global = document;
  
-__.is_global(no_global) // Return FALSE
-__.is_global(my_global) // Return TRUE
+_.is_global(no_global) // Return FALSE
+_.is_global(my_global) // Return TRUE
 ```
         
 **Method `.is_$(param)`**
@@ -756,8 +756,8 @@ __.is_global(my_global) // Return TRUE
 var no_$ = document, 
  my_$ = __.$('body');
  
-__.is_$(no_$) // Return FALSE
-__.is_$(my_$) // Return TRUE 
+_.is_$(no_$) // Return FALSE
+_.is_$(my_$) // Return TRUE 
 ```
       
 **Method `.is_string(param)`**
@@ -767,8 +767,8 @@ __.is_$(my_$) // Return TRUE
 var no_string = document, 
  my_string = 'String example';
  
-__.is_string(no_string) // Return FALSE
-__.is_string(my_string) // Return TRUE
+_.is_string(no_string) // Return FALSE
+_.is_string(my_string) // Return TRUE
 ```
       
 **Method `.is_function(param)`**
@@ -780,8 +780,8 @@ var no_function = 'String example',
  
  };
  
-__.is_function(no_function) // Return FALSE
-__.is_function(my_function) // Return TRUE 
+_.is_function(no_function) // Return FALSE
+_.is_function(my_function) // Return TRUE 
 ```
      
 **Method `.is_html(param)`**
@@ -791,8 +791,8 @@ __.is_function(my_function) // Return TRUE
 var no_html = 'String example', 
  my_html = '<div>Hello!</div>';
  
-__.is_html(no_html) // Return FALSE
-__.is_html(my_html) // Return TRUE 
+_.is_html(no_html) // Return FALSE
+_.is_html(my_html) // Return TRUE 
 ```
      
 **Method `.is_boolean(param)`**
@@ -802,8 +802,8 @@ __.is_html(my_html) // Return TRUE
 var no_bool = 'String example', 
  my_bool = TRUE';
  
-__.is_boolean(no_bool) // Return FALSE
-__.is_boolean(my_bool) // Return TRUE
+_.is_boolean(no_bool) // Return FALSE
+_.is_boolean(my_bool) // Return TRUE
 ```
      
 **Method `.is_regexp(param)`**
@@ -813,8 +813,8 @@ __.is_boolean(my_bool) // Return TRUE
 var no_regexp = 'String example', 
  my_regexp = /[1-9]/g || new RegExp('[1-9]','g');
  
-__.is_regexp(no_regexp) // Return FALSE
-__.is_regexp(my_regexp) // Return TRUE
+_.is_regexp(no_regexp) // Return FALSE
+_.is_regexp(my_regexp) // Return TRUE
 ```     
      
 **Method `.is_set(param)`**
@@ -824,8 +824,8 @@ __.is_regexp(my_regexp) // Return TRUE
 var no_set = undefined || NULL || FALSE, 
  my_set = 'Seted' || TRUE || ....;
  
-__.is_set(no_set) // Return FALSE
-__.is_set(my_set) // Return TRUE
+_.is_set(no_set) // Return FALSE
+_.is_set(my_set) // Return TRUE
 ```
      
 **Method `.is_empty(param)`**
@@ -835,8 +835,8 @@ __.is_set(my_set) // Return TRUE
 var empty = '' || [] || ' ', 
  no_empty = [1,2,3,4] || 'Not Empty';
  
-__.is_empty(no_empty) // Return FALSE
-__.is_empty(empty) // Return TRUE
+_.is_empty(no_empty) // Return FALSE
+_.is_empty(empty) // Return TRUE
 ```
      
 **Method `.is_url(param)`**
@@ -846,8 +846,8 @@ __.is_empty(empty) // Return TRUE
 var no_url = 'String Example', 
  my_url = 'http://google.com' || 'https://google.com';
  
-__.is_url(no_url) // Return FALSE
-__.is_url(my_url) // Return TRUE
+_.is_url(no_url) // Return FALSE
+_.is_url(my_url) // Return TRUE
 ```
      
 **Method `.is_mail(param)`**
@@ -857,8 +857,8 @@ __.is_url(my_url) // Return TRUE
 var no_email = 'String Example', 
  my_email = 'i_am_mail@gmail.com';
   
-__.is_mail(no_mail) // Return FALSE
-__.is_mail(my_mail) // Return TRUE
+_.is_mail(no_mail) // Return FALSE
+_.is_mail(my_mail) // Return TRUE
 ```
 
 **Method `.is_json(param)`**
@@ -868,8 +868,8 @@ __.is_mail(my_mail) // Return TRUE
 var no_json = {a:1,b:2}, 
  my_json = '{"a":"1","b":"2"}';
   
-__.is_json(no_json) // Return FALSE
-__.is_json(my_json) // Return TRUE
+_.is_json(no_json) // Return FALSE
+_.is_json(my_json) // Return TRUE
 ```
 
 **Method `.is_number(param)`**
@@ -879,8 +879,8 @@ __.is_json(my_json) // Return TRUE
 var no_number = 'No Number', 
  my_number = '123' || 123;
   
-__.is_number(no_number) // Return FALSE
-__.is_number(my_number) // Return TRUE
+_.is_number(no_number) // Return FALSE
+_.is_number(my_number) // Return TRUE
 ```
 
 Helpers
@@ -890,14 +890,14 @@ Helpers
 
 *(Show console warning.)*
 ```js           
-__.warning('Field Empty'); // 04:12:05 PM -> Field Empty
+_.warning('Field Empty'); // 04:12:05 PM -> Field Empty
 ```
      
 **Method `.error(msg)`**
 
 *(Throw console error.)*
 ```js           
-__.error('No param'); // 04:12:05 PM -> No param
+_.error('No param'); // 04:12:05 PM -> No param
 ```
   
 **Method `.interval(callback, conf)`**
@@ -917,7 +917,7 @@ _.interval(function (x) {
 
 *(Intuitive objects or tour arrangements)*
 ```js           
-__.each([1,2,3], function(v,i,p){
+_.each([1,2,3], function(v,i,p){
     v // Element
     i // Index or Key
     p // Loop Control { p.last or p.first}
@@ -943,8 +943,8 @@ var _my_callback = function(a,b){
     alert(a);
     alert(b);
 }       
-__.callback_audit();//No callback, no execution and no errors throws, jus omitted
-__.callback_audit(_my_callback, 1, 2);//Callback executed with 1 and 2 parameters 
+_.callback_audit();//No callback, no execution and no errors throws, jus omitted
+_.callback_audit(_my_callback, 1, 2);//Callback executed with 1 and 2 parameters 
 ```
 
 **Method `.extend(target, source, overwrite)`**
@@ -954,8 +954,8 @@ __.callback_audit(_my_callback, 1, 2);//Callback executed with 1 and 2 parameter
 var _my_target = {a:1,b:5},
     _my_source = {b:2,c:3};
     
-__.extend(my_target, _my_source); //Return {a:1,b:5,c:3} not overwrite the target
-__.extend(my_target, _my_source, TRUE); //Return {a:1,b:2,c:3}
+_.extend(my_target, _my_source); //Return {a:1,b:5,c:3} not overwrite the target
+_.extend(my_target, _my_source, TRUE); //Return {a:1,b:2,c:3}
 ```    
 
 **Method `include(script, wait, callback)`**
@@ -963,13 +963,13 @@ __.extend(my_target, _my_source, TRUE); //Return {a:1,b:2,c:3}
 *(Includes scripts in a controlled environment)*
 ```js    
 //FIRST SCENARIO
-__.include('my_script.js', function(){
+_.include('my_script.js', function(){
     //my_script ready
 })
 
 //Again the same inclusion
 //In this case the script is not obtained again only callback is executed
-__.include('my_script.js', function(){
+_.include('my_script.js', function(){
        //my_script ready again
   })
   
@@ -978,9 +978,9 @@ __.include('my_script.js', function(){
 //If another script which depends for its execution is necessary we can use wait
 //In this case needed.js is called with wait
 
- __.include('needed'.js);
+ _.include('needed'.js);
 
- __.include('i_need_needed_to_work.js', 'needed.js', function(){
+ _.include('i_need_needed_to_work.js', 'needed.js', function(){
            //i_need_needed_to_work.js is ready when needed.js is ready
  })
 ``` 
@@ -995,7 +995,7 @@ Array Tools
 ```js    
 var _my_array = [1,2,3,NULL,'',FALSE];
 
-__.compact_array(_my_array); // [1,2,3];
+_.compact_array(_my_array); // [1,2,3];
 ```
     
 **Method `.spec_array(array)`**
@@ -1004,7 +1004,7 @@ __.compact_array(_my_array); // [1,2,3];
 ```js    
 var _my_array = //Dinamic value can be [1,2,3] or [1]
    
-__.spec_array(_my_array); 
+_.spec_array(_my_array); 
 // if _my_array length > 1 return array else return first value
 ``` 
    
@@ -1012,7 +1012,7 @@ __.spec_array(_my_array);
 
 *(Filter Array)*
 ```js    
-__.filter_array([1,2,3], function(v){
+_.filter_array([1,2,3], function(v){
     return v % 2 === 0;
 })
 ```
@@ -1021,22 +1021,22 @@ __.filter_array([1,2,3], function(v){
 
 *(Verify existence of element in array using regexp)*
 ```js    
-__.match_in_array(/happy/g,['help','up','happy']) // Return TRUE
+_.match_in_array(/happy/g,['help','up','happy']) // Return TRUE
 ``` 
    
 **Method `.unique_array(array)`**
 
 *(Return unique array, with not repeated values)*
 ```js    
-__.unique_array([1,2,3,4,1,2]) // Return [1,2,3,4]
+_.unique_array([1,2,3,4,1,2]) // Return [1,2,3,4]
 ```
     
 **Method `.to_array(String|Object)`**
 
 *(Parse String or Object to Array)*
 ```js    
-__.to_array('Hola') // Return ['H','o','l','a']
-__.to_array({a:1,b:2,c:3}) // Return [1,2,3]
+_.to_array('Hola') // Return ['H','o','l','a']
+_.to_array({a:1,b:2,c:3}) // Return [1,2,3]
 ```
     
     
@@ -1049,22 +1049,22 @@ Object Tools
 
 *Array is considered a native type inherited from Object, you can use an array as a parameter haystack*
 ```js    
-__.in_object(5, {a:5,b:6}) //Return TRUE
+_.in_object(5, {a:5,b:6}) //Return TRUE
 ```
     
 **Method `.to_object(String|Array)`**
 
 *(Parse String or Array to Object)*
 ```js    
-__.to_object('Hola') // Return [0=>'H',1=>'o',2=>'l',3=>'a']
-__.to_aobject(['H','o','l','a']) // Return [0=>'H',1=>'o',2=>'l',3=>'a']
+_.to_object('Hola') // Return [0=>'H',1=>'o',2=>'l',3=>'a']
+_.to_aobject(['H','o','l','a']) // Return [0=>'H',1=>'o',2=>'l',3=>'a']
 ```
 
 **Method `.object_distribute(Object, index)`**
 
 *(Joins the elements of an object in a selected index)*
 ```js    
-__.object_distribute({a:'Hi',b:'What',c:'MyIndex'},'MyIndex') 
+_.object_distribute({a:'Hi',b:'What',c:'MyIndex'},'MyIndex') 
 // Return {
     MyIndex:{
         a:'Hi',
@@ -1082,7 +1082,7 @@ String Tools
 ```js     
 var _string = '<div>I am a html</div>'      
 
-__.html_entities(_string); // &lt;div&gt;I am a html&lt;/div&gt;
+_.html_entities(_string); // &lt;div&gt;I am a html&lt;/div&gt;
 ``` 
 
 **Method `.truncate_string(str, limit)`**
@@ -1091,7 +1091,7 @@ __.html_entities(_string); // &lt;div&gt;I am a html&lt;/div&gt;
 ```js     
 var _string = 'I need be truncated until here'      
 
-__.truncate_string(_string, 9); // 'I need be'
+_.truncate_string(_string, 9); // 'I need be'
 ```
  
 **Method `.replace(string, search, replace)`**
@@ -1100,7 +1100,7 @@ __.truncate_string(_string, 9); // 'I need be'
 ```js     
 var _string = 'I need be truncated until here'      
 
-__.replace(_string, 'truncated', 'happy'); // 'I need be happy until here' 
+_.replace(_string, 'truncated', 'happy'); // 'I need be happy until here' 
 ```     
 
 **Method `.object_as_string(string, search, replace)`**
@@ -1109,7 +1109,7 @@ __.replace(_string, 'truncated', 'happy'); // 'I need be happy until here'
 ```js  
 var _my_object = {a:1,b:2c:3};    
 
-__.object_as_string(_my_object); // Return [Object object]; 
+_.object_as_string(_my_object); // Return [Object object]; 
 ```
   
 **Method `.parse_json_url(object)`**
@@ -1118,14 +1118,14 @@ __.object_as_string(_my_object); // Return [Object object];
 ```js  
 var _my_object = {a:1,b:2c:3};    
 
-__.parse_json_url(_my_object); // Return a=1&b=2&c=3; 
+_.parse_json_url(_my_object); // Return a=1&b=2&c=3; 
 ```       
 
 **Method `.repeat_string(str, times)`**
  
 *(Return repeated string)* 
 ```js  
-__.repeat_string('Happy!', 4); 
+_.repeat_string('Happy!', 4); 
 // Return Happy!Happy!Happy!Happy!;
 ```
      
@@ -1136,7 +1136,7 @@ Getters
 
 *(Returns the date on the parameter, if the parameter is not passed, it uses the current date )*
 ```js     
-__.get_date(); 
+_.get_date(); 
 //If today is 2014-05-12 08:25:02
 //Return Example {
         day: 12,
@@ -1149,7 +1149,7 @@ __.get_date();
         
     }
                     
-__.get_date('2014-10-13 08:25:02'); 
+_.get_date('2014-10-13 08:25:02'); 
 // Param used
 //Return Example {
          day: 13,
@@ -1167,7 +1167,7 @@ __.get_date('2014-10-13 08:25:02');
 
 *(Returns the used nav)*
 ```js     
-__.get_nav(); 
+_.get_nav(); 
 //Return Example {
         nav: 'Chrome',
         version: '32'
@@ -1179,7 +1179,7 @@ __.get_nav();
 
 *(Returns a simple encoded id. If length is passed the code is truncated)*
 ```js     
-__.get_encoded_id(10); //aA25Gtsht6
+_.get_encoded_id(10); //aA25Gtsht6
 ```     
      
 **Method `.get_object_size(object)`**
@@ -1187,7 +1187,7 @@ __.get_encoded_id(10); //aA25Gtsht6
 *(Returns the object size.)*
 ```js
 var _my_object = {a:1,b:2c:3};
-__.get_object_size(_my_object); // Return 3
+_.get_object_size(_my_object); // Return 3
 ```
      
 **Method `.get_cookie(name)`**
@@ -1197,8 +1197,8 @@ __.get_object_size(_my_object); // Return 3
 //Cookie my_cookie=asf58as52dsf84e5
 //Cookie my_csrf=asdf584a2d48rwefr42
 
- __.get_cookie('my_cookie'); // Return asf58as52dsf84e5
- __.get_cookie('my_csrf'); // Return asdf584a2d48rwefr42
+ _.get_cookie('my_cookie'); // Return asf58as52dsf84e5
+ _.get_cookie('my_csrf'); // Return asdf584a2d48rwefr42
 ```
  
 **Method `.get_script(url, callback)`**
@@ -1239,10 +1239,13 @@ __.$(document).ready(function(){
                 name : 'Carl',
                 lastname : 'Jackson'
             });
-            
-        Template.my_view(data_from_model, function(my_html){
-            //Do something with my_html
-        })
+        
+            _.include('view/my_view', function(){
+                Template.my_view(data_from_model, function(my_html){
+                    //Do something with my_html
+                })
+            })
+        
 
     })
     
@@ -1376,11 +1379,15 @@ __.$(document).ready(function(){
                     { name : 'Pedro',lastname : 'Martinez'} 
                ]}; // Data used in the view
         
-    template.my_view(data, function(my_html){
-        //The parsed Template my_html
-        __.$('.my_container').html(my_html);
         
-    })
+    _.include('view/reports/init', function(){
+         template.my_view(data, function(my_html){
+                //The parsed Template my_html
+                __.$('.my_container').html(my_html);
+                
+          })
+    })    
+   
     
     //My code
 })
