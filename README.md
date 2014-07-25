@@ -1255,7 +1255,7 @@ __.$(document).ready(function(){
 
 //The Contact Controller
 __.$(document).ready(function(){
-    __.include('model/Form', function(){
+    __.include('lib/Form', function(){
         //My Code for the model
         
         var template = new _.Template,  
@@ -1359,7 +1359,7 @@ it is worth briefly discussing JavaScript templating and its relationship to vie
 
 ```js
 
-//Defining View /views/reports/init.js
+//Defining View /view/reports/init.js
 Template.add('my_view', function (data, callback) {
     var _self = this;
     _self.get('reports/index', function (template) {
