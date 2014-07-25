@@ -87,14 +87,14 @@ my_selector.ready(function(){
 **Method `.load()`**
 
 *(Used for the execution of our code, when the the complete page is fully loaded)*
-    
-    var my_selector = __.$(window);
-    
-    //The selector must be a window object
-    my_selector.load(function(){
-        /* My code */
-    });
-    
+```js    
+var my_selector = __.$(window);
+
+//The selector must be a window object
+my_selector.load(function(){
+    /* My code */
+});
+```    
 
 **Method `.filter(filter, callback, e_handler(optional))`**
 
