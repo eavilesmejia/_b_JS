@@ -147,8 +147,8 @@ var my_selector = __.$('#my_button');
 my_selector.data('id'); // Returns 5
 my_selector.data('id', 10); // Assign 10. 
 ```
-//RESULT OF ASSIGN
 ```html
+//RESULT OF ASSIGN
 <button id="my_button" data-id="10"></button>
 ```    
     
@@ -156,17 +156,19 @@ my_selector.data('id', 10); // Assign 10.
 
 *(Prop Object. If prop_value object type is passed, it assigned, else if prop_value is string type, then value is returned)*
 
-    //HTML BUTTON
-    <button id="my_button">My Example</button>
-    
-    var my_selector = __.$('#my_button');
-    
-    my_selector.prop('textContent'); // Returns My Example
-    my_selector.data({'textContent': My Other Example}); // Assign My Other Example. 
-    
-    //RESULT OF ASSIGN
-    <button id="my_button">My Other Example</button>
+```html
+<button id="my_button">My Example</button>
+```
+```js
+var my_selector = __.$('#my_button');
 
+my_selector.prop('textContent'); // Returns My Example
+my_selector.data({'textContent': My Other Example}); // Assign My Other Example. 
+```
+```html
+//RESULT OF ASSIGN
+<button id="my_button">My Other Example</button>
+```
 
 **Method `.attr('attr_value')`**
 
