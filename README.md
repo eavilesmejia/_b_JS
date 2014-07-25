@@ -1210,7 +1210,7 @@ __.get_script('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', fun
 });
 ```
 
-Working B
+B in Working
 ========
 
 B Controllers
