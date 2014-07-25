@@ -1229,50 +1229,50 @@ they both update the view when the model changes and update the model when the u
 <script src="YOUR PATH/__b__/controller/contact/init.js"></script>
 ```
 ```js
-        //The Index Controller
-        __.$(document).ready(function(){
-            __.include('my_model', function(){
-                //My Code for the model
-                
-                var template = new _.Template,                
-                    data_from_model = my_model.get({
-                        name : 'Carl',
-                        lastname : 'Jackson'
-                    });
-                    
-                Template.my_view(data_from_model, function(my_html){
-                    //Do something with my_html
-                })
-  
-            })
+//The Index Controller
+__.$(document).ready(function(){
+    __.include('my_model', function(){
+        //My Code for the model
+        
+        var template = new _.Template,                
+            data_from_model = my_model.get({
+                name : 'Carl',
+                lastname : 'Jackson'
+            });
             
-            //My code
+        Template.my_view(data_from_model, function(my_html){
+            //Do something with my_html
         })
-        
-        
-        //The Contact Controller
-        __.$(document).ready(function(){
-            __.include('model/Form', function(){
-                //My Code for the model
-                
-                var template = new _.Template,  
-                    form_contact = new Form;
-                    
-                form_contact.on('complete', function(result){
-                    //Do something with result
-                })
-                                    
-                __.$('.my_form').addListener('submit', function(e){
-                        form_contact.method('POST');
-                        form_contact.action('/contact/');
-                        form_contact.pack(e.target);
-                        form_contact.submit(e)
-                })    
 
-            })
+    })
+    
+    //My code
+})
+
+
+//The Contact Controller
+__.$(document).ready(function(){
+    __.include('model/Form', function(){
+        //My Code for the model
+        
+        var template = new _.Template,  
+            form_contact = new Form;
             
-            //My code
+        form_contact.on('complete', function(result){
+            //Do something with result
         })
+                            
+        __.$('.my_form').addListener('submit', function(e){
+                form_contact.method('POST');
+                form_contact.action('/contact/');
+                form_contact.pack(e.target);
+                form_contact.submit(e)
+        })    
+
+    })
+    
+    //My code
+})
         
 ```        
                        
@@ -1286,9 +1286,126 @@ B Models
 B Views
 =======
 
-*Pending Documentation*
+Views are a visual representation of models that present a filtered view of their current state. 
+A view typically observes a model and is notified when the model changes, allowing the view to update itself accordingly. 
+Design pattern literature commonly refers to views as 'dumb' given that their knowledge of models and controllers in an application is limited.
+
+*In B views are handled from a dedicated environment (application modules), not combined application*
+
+*The Views are located in the folder "/views/module_name", and are called inside the controller*
+
+*Example:*
+
+```js
+//Defining View
+Template.add('my_view', function (data, callback) {
+    var _self = this;
+    _self.get('my_template', function (template) {
+        if (_.is_set(callback)) {
+            _self.parse(template, data, callback);
+        }
+    });
+});
+
+
+//The Controller
+__.$(document).ready(function(){
+       
+    var template = new _.Template,
+        data = {name : 'Juan', lastname : 'Rodriguez'}; // Data used in the view
+        
+    template.my_view(data, function(my_html){
+        //The parsed Template my_html do something.
+    })
+    
+    //My code
+})
+        
+```  
 
 B Templates
 ========
 
-*Pending Documentation*
+In the context of JavaScript frameworks that support MVC/MV*, 
+it is worth briefly discussing JavaScript templating and its relationship to views as we briefly touched upon it in the last section.
+
+*In B templates are handled from a dedicated environment (application modules), not combined application*
+
+*The Views are located in the folder "/templates/module_name", and are called inside the controller*
+
+*Example:*
+
+```html
+//Creating Template reports.html
+<div class="reports_info">
+    <table>
+        <th>Travel Info</th>
+            <% (for |data| in |info|) %>
+            <tr>
+                <td>
+                    <div><strong>Name:</strong> <span>{data.name}</span></div>
+                    <div><strong>Lastname:</strong> <span>{data.lastname}</span></div>
+                </td>
+            </tr>
+        <% endfor %>
+    </table>
+</div>
+
+```
+
+```js
+
+//Defining View
+Template.add('my_view', function (data, callback) {
+    var _self = this;
+    _self.get('reports.html', function (template) {
+        if (_.is_set(callback)) {
+            _self.parse(template, data, callback);
+        }
+    });
+});
+
+
+//The Controller
+__.$(document).ready(function(){
+
+    var template = new _.Template,
+        data = {info : [
+                    {
+                        name : 'Juan',
+                        lastname : 'Rodriguez'
+                    },
+                    {
+                        name : 'Pedro',
+                        lastname : 'Martinez'
+                    } 
+               ]}; // Data used in the view
+        
+    template.my_view(data, function(my_html){
+        //The parsed Template my_html
+        
+        //RESULT
+        
+        <div class="reports_info">
+            <table>
+                <th>Travel Info</th>
+                    <tr>
+                        <td>
+                            <div><strong>Name:</strong> <span>Juan</span></div>
+                            <div><strong>Lastname:</strong> <span>Rodriguez</span></div>
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td>
+                            <div><strong>Name:</strong> <span>Pedro</span></div>
+                            <div><strong>Lastname:</strong> <span>Martinez</span></div>
+                        </td>
+                    </tr>
+            </table>
+        </div>
+    })
+    
+    //My code
+})
+
+```
