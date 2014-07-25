@@ -43,11 +43,11 @@ DOM Tools
 *This method helps you find DOM objects and generate $ object*
 
 ```js
-    var my_selector = __.$('<div></div>');
-    var my_selector = __.$('.selector');
-    var my_selector = __.$('.selector:pseudo');
-    var my_selector = __.$('.selector_parent .selector_child');
-    var my_selector = __.$('#selector');
+var my_selector = __.$('<div></div>');
+var my_selector = __.$('.selector');
+var my_selector = __.$('.selector:pseudo');
+var my_selector = __.$('.selector_parent .selector_child');
+var my_selector = __.$('#selector');
 ```
     
 *You can try many possibilities to find and get dom elements*
@@ -59,31 +59,31 @@ DOM Tools
 *(Verify DOM element existence)*
 
 ```js
-    var my_selector = __.$('.dom_to_verify');
-    if(my_selector.exist){
-        //TRUE if my_selector exist in DOM tree
-    }
+var my_selector = __.$('.dom_to_verify');
+if(my_selector.exist){
+    //TRUE if my_selector exist in DOM tree
+}
 ```
     
 **Method `.object()`**
 
 *(Return $ object)*
-    
-    var my_selector = __.$('.$_to_get');
-    
-    my_selector.object(); //Return $ object
+```js    
+var my_selector = __.$('.$_to_get');
 
+my_selector.object(); //Return $ object
+```
 **Method `.ready()`**
 
 *(Used for the execution of our code, when the Document Object ready)*
-    
-    var my_selector = __.$(document);
-    
-    //The selector must be a document object
-    my_selector.ready(function(){
-        /* My code */
-    });
-    
+```js    
+var my_selector = __.$(document);
+
+//The selector must be a document object
+my_selector.ready(function(){
+    /* My code */
+}); 
+```    
 **Method `.load()`**
 
 *(Used for the execution of our code, when the the complete page is fully loaded)*
