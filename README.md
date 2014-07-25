@@ -459,23 +459,24 @@ my_selector.addClass('div2') // Add the class div2 to .div
 **Method `.toggleClass(class)`**
 
 *(Toggle class in element)*
-
-    var my_selector = __.$('.div');
+```js
+var my_selector = __.$('.div');
     
-    my_selector.toggleClass('div') // If have the class its removed else is added
-
+my_selector.toggleClass('div') // If have the class its removed else is added
+```
 
 **Method `.removeClass(class)`**
 
 *(Remove class from element)*
+```js
+var my_selector = __.$('.div');
 
-    var my_selector = __.$('.div');
-    
-    my_selector.removeClass('div') // If have the class its removed
-   
-    //RESULT
-    <div></div>
-    
+my_selector.removeClass('div') // If have the class its removed
+```
+```html
+//RESULT
+<div></div>
+```    
     
 **Method `.fadeOut(mseconds)`**
 
