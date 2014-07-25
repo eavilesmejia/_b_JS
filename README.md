@@ -938,51 +938,52 @@ __.each([1,2,3], function(v,i,p){
 **Method `.callback_audit(callback, param1, param2, ..)`**
 
 *(This verifies that the callback set, if so then runs it with the given parameters)*
-    
-    var _my_callback = function(a,b){
-        alert(a);
-        alert(b);
-    }       
-    __.callback_audit();//No callback, no execution and no errors throws, jus omitted
-    __.callback_audit(_my_callback, 1, 2);//Callback executed with 1 and 2 parameters 
+```js    
+var _my_callback = function(a,b){
+    alert(a);
+    alert(b);
+}       
+__.callback_audit();//No callback, no execution and no errors throws, jus omitted
+__.callback_audit(_my_callback, 1, 2);//Callback executed with 1 and 2 parameters 
+```
 
 **Method `.extend(target, source, overwrite)`**
 
 *(Extend Object)*
+```js    
+var _my_target = {a:1,b:5},
+    _my_source = {b:2,c:3};
     
-    var _my_target = {a:1,b:5},
-        _my_source = {b:2,c:3};
-        
-    __.extend(my_target, _my_source); //Return {a:1,b:5,c:3} not overwrite the target
-    __.extend(my_target, _my_source, TRUE); //Return {a:1,b:2,c:3}
-    
+__.extend(my_target, _my_source); //Return {a:1,b:5,c:3} not overwrite the target
+__.extend(my_target, _my_source, TRUE); //Return {a:1,b:2,c:3}
+```    
 
 **Method `include(script, wait, callback)`**
 
 *(Includes scripts in a controlled environment)*
-    
-    //FIRST SCENARIO
-    __.include('my_script.js', function(){
-        //my_script ready
-    })
-   
-    //Again the same inclusion
-    //In this case the script is not obtained again only callback is executed
-    __.include('my_script.js', function(){
-           //my_script ready again
-      })
-      
-      
-    //SECOND SCENARIO
-    //If another script which depends for its execution is necessary we can use wait
-    //In this case needed.js is called with wait
-    
-     __.include('needed'.js);
-    
-     __.include('i_need_needed_to_work.js', 'needed.js', function(){
-               //i_need_needed_to_work.js is ready when needed.js is ready
-     })
-      
+```js    
+//FIRST SCENARIO
+__.include('my_script.js', function(){
+    //my_script ready
+})
+
+//Again the same inclusion
+//In this case the script is not obtained again only callback is executed
+__.include('my_script.js', function(){
+       //my_script ready again
+  })
+  
+  
+//SECOND SCENARIO
+//If another script which depends for its execution is necessary we can use wait
+//In this case needed.js is called with wait
+
+ __.include('needed'.js);
+
+ __.include('i_need_needed_to_work.js', 'needed.js', function(){
+           //i_need_needed_to_work.js is ready when needed.js is ready
+ })
+``` 
 
 
 Array Tools
