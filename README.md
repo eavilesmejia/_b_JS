@@ -992,48 +992,52 @@ Array Tools
 **Method `.compact_array(array)`**
 
 *(Filter Null, FALSE or empty in array)*
-    
-    var _my_array = [1,2,3,NULL,'',FALSE];
-    
-    __.compact_array(_my_array); // [1,2,3];
+```js    
+var _my_array = [1,2,3,NULL,'',FALSE];
+
+__.compact_array(_my_array); // [1,2,3];
+```
     
 **Method `.spec_array(array)`**
 
 *(Speculate Array)*
-    
-    var _my_array = //Dinamic value can be [1,2,3] or [1]
-    
+```js    
+var _my_array = //Dinamic value can be [1,2,3] or [1]
    
-    __.spec_array(_my_array); 
-    // if _my_array length > 1 return array else return first value
-    
+__.spec_array(_my_array); 
+// if _my_array length > 1 return array else return first value
+``` 
+   
 **Method `.filter_array(array,callback)`**
 
 *(Filter Array)*
-    
-    __.filter_array([1,2,3], function(v){
-        return v % 2 === 0;
-    })
+```js    
+__.filter_array([1,2,3], function(v){
+    return v % 2 === 0;
+})
+```
     
 **Method `.match_in_array(regexp,haystack)`**
 
 *(Verify existence of element in array using regexp)*
-    
-    __.match_in_array(/happy/g,['help','up','happy']) // Return TRUE
-    
+```js    
+__.match_in_array(/happy/g,['help','up','happy']) // Return TRUE
+``` 
+   
 **Method `.unique_array(array)`**
 
 *(Return unique array, with not repeated values)*
-    
-    __.unique_array([1,2,3,4,1,2]) // Return [1,2,3,4]
+```js    
+__.unique_array([1,2,3,4,1,2]) // Return [1,2,3,4]
+```
     
 **Method `.to_array(String|Object)`**
 
 *(Parse String or Object to Array)*
-    
-    __.to_array('Hola') // Return ['H','o','l','a']
-    __.to_array({a:1,b:2,c:3}) // Return [1,2,3]
-    
+```js    
+__.to_array('Hola') // Return ['H','o','l','a']
+__.to_array({a:1,b:2,c:3}) // Return [1,2,3]
+```
     
     
 Object Tools
@@ -1044,28 +1048,30 @@ Object Tools
 *(Verify existence of element in object)*
 
 *Array is considered a native type inherited from Object, you can use an array as a parameter haystack*
-    
-    __.in_object(5, {a:5,b:6}) //Return TRUE
+```js    
+__.in_object(5, {a:5,b:6}) //Return TRUE
+```
     
 **Method `.to_object(String|Array)`**
 
 *(Parse String or Array to Object)*
-    
-    __.to_object('Hola') // Return [0=>'H',1=>'o',2=>'l',3=>'a']
-    __.to_aobject(['H','o','l','a']) // Return [0=>'H',1=>'o',2=>'l',3=>'a']
-
+```js    
+__.to_object('Hola') // Return [0=>'H',1=>'o',2=>'l',3=>'a']
+__.to_aobject(['H','o','l','a']) // Return [0=>'H',1=>'o',2=>'l',3=>'a']
+```
 
 **Method `.object_distribute(Object, index)`**
 
 *(Joins the elements of an object in a selected index)*
-    
-    __.object_distribute({a:'Hi',b:'What',c:'MyIndex'},'MyIndex') 
-    // Return {
-        MyIndex:{
-            a:'Hi',
-            b:'What'
-        }
+```js    
+__.object_distribute({a:'Hi',b:'What',c:'MyIndex'},'MyIndex') 
+// Return {
+    MyIndex:{
+        a:'Hi',
+        b:'What'
     }
+}
+```
 
 String Tools
 ------------
@@ -1073,53 +1079,55 @@ String Tools
 **Method `.html_entities(str)`**
 
 *(Reformat html to unicode from String)*
-     
-     var _string = '<div>I am a html</div>'      
-     
-     __.html_entities(_string); // &lt;div&gt;I am a html&lt;/div&gt;
-     
+```js     
+var _string = '<div>I am a html</div>'      
+
+__.html_entities(_string); // &lt;div&gt;I am a html&lt;/div&gt;
+``` 
 
 **Method `.truncate_string(str, limit)`**
 
 *(Truncate string until limit)*
-     
-     var _string = 'I need be truncated until here'      
-     
-     __.truncate_string(_string, 9); // 'I need be'
-     
+```js     
+var _string = 'I need be truncated until here'      
+
+__.truncate_string(_string, 9); // 'I need be'
+```
+ 
 **Method `.replace(string, search, replace)`**
 
 *(Replace search with new value)*
-     
-     var _string = 'I need be truncated until here'      
-     
-     __.replace(_string, 'truncated', 'happy'); // 'I need be happy until here' 
-     
+```js     
+var _string = 'I need be truncated until here'      
+
+__.replace(_string, 'truncated', 'happy'); // 'I need be happy until here' 
+```     
 
 **Method `.object_as_string(string, search, replace)`**
  
 *(Return a object with the string type)*
-  
-    var _my_object = {a:1,b:2c:3};    
-  
-    __.object_as_string(_my_object); // Return [Object object]; 
+```js  
+var _my_object = {a:1,b:2c:3};    
+
+__.object_as_string(_my_object); // Return [Object object]; 
+```
   
 **Method `.parse_json_url(object)`**
  
 *(Return a URL query string)*
-  
-    var _my_object = {a:1,b:2c:3};    
-  
-    __.parse_json_url(_my_object); // Return a=1&b=2&c=3; 
-       
+```js  
+var _my_object = {a:1,b:2c:3};    
+
+__.parse_json_url(_my_object); // Return a=1&b=2&c=3; 
+```       
 
 **Method `.repeat_string(str, times)`**
  
 *(Return repeated string)* 
-  
-    __.repeat_string('Happy!', 4); 
-    // Return Happy!Happy!Happy!Happy!;
-
+```js  
+__.repeat_string('Happy!', 4); 
+// Return Happy!Happy!Happy!Happy!;
+```
      
 Getters
 ----------
@@ -1127,33 +1135,34 @@ Getters
 **Method `.get_date(date)`**
 
 *(Returns the date on the parameter, if the parameter is not passed, it uses the current date )*
+```js     
+__.get_date(); 
+//If today is 2014-05-12 08:25:02
+//Return Example {
+        day: 12,
+        month: 'May',
+        year: 2014,
+        hour: 08,
+        minutes: 25,
+        seconds: 02
+        meridian: PM || AM
+        
+    }
+                    
+__.get_date('2014-10-13 08:25:02'); 
+// Param used
+//Return Example {
+         day: 13,
+         month: 'October',
+         year: 2014,
+         hour: 08,
+         minutes: 25,
+         seconds: 02
+         meridian: PM || AM
+         
+     }
+```
      
-     __.get_date(); 
-     //If today is 2014-05-12 08:25:02
-     //Return Example {
-                day: 12,
-                month: 'May',
-                year: 2014,
-                hour: 08,
-                minutes: 25,
-                seconds: 02
-                meridian: PM || AM
-                
-            }
-                            
-     __.get_date('2014-10-13 08:25:02'); 
-     // Param used
-     //Return Example {
-                 day: 13,
-                 month: 'October',
-                 year: 2014,
-                 hour: 08,
-                 minutes: 25,
-                 seconds: 02
-                 meridian: PM || AM
-                 
-             }
-             
 **Method `.get_nav()`**
 
 *(Returns the used nav)*
