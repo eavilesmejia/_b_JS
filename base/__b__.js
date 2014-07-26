@@ -1170,7 +1170,7 @@ Socket.add('send', function (config) {
     _myconf.from = this.user;
     _myconf.admin = this.admin;
 
-    config = extend(_myconf, config);
+    config = _.extend(_myconf, config);
 
     if (!config.protocol) {
         throw (WARNING_BASE.ERROR.NOPROTOCOL);

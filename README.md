@@ -1054,7 +1054,7 @@ _.in_object(5, {a:5,b:6}) //Return TRUE
 *(Parse String or Array to Object)*
 ```js    
 _.to_object('Hola') // Return [0=>'H',1=>'o',2=>'l',3=>'a']
-_.to_aobject(['H','o','l','a']) // Return [0=>'H',1=>'o',2=>'l',3=>'a']
+_.to_object(['H','o','l','a']) // Return [0=>'H',1=>'o',2=>'l',3=>'a']
 ```
 
 **Method `.object_distribute(Object, index)`**

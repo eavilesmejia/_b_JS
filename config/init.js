@@ -2,17 +2,16 @@
  * Created by gmena on 07-26-14.
  */
 
-'use strict';
+//Basic Config
+
+var setting = {
+    ajax_processor: '.php',
+    app_path: '../../',
+    env: 'development'
+};
 
 
-//Directoy and processor
-const AJAX_PROCESSOR = '.php';
-const APP_PATH = '';
-
-//Files
-const UNIFY_FILES = false;
-
-
-var AUTOLOADER = [
-    'lib/Form'
-];
+//Please install Node and run the command `npm install`
+//Set Environment
+if (exports)
+    exports.setting = setting;
