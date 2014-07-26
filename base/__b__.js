@@ -203,7 +203,7 @@ _$_.add('filter', function (filter, callback, e_handler) {
             elem.msMatchesSelector;
 
         if (match.call(elem, filter)) {
-            _.callback_audit(callback, elem);
+            _.callback_audit(callback, __.$(elem));
         } else {
             if (_.is_function(e_handler))
                 _.callback_audit(e_handler, elem);
@@ -229,7 +229,7 @@ _$_.add('clone', function (childs) {
     childs = _.is_set(childs);
     var _clones = [];
     this.each(function (v) {
-        _clones.push(v.cloneNode(childs));
+        _clones.push(__.$(v.cloneNode(childs)));
     });
     return _.spec_array(_clones);
 
@@ -250,7 +250,7 @@ _$_.add('data', function (name, value) {
             _data_set = 'data-' + name;
             if (_.is_set(value)) {
                 var _set = {};
-                _set[_data_set] = value
+                _set[_data_set] = value;
                 _self.attr(_set);
             } else {
                 var _attr = _self.attr(_data_set);
@@ -332,7 +332,7 @@ _$_.add('css', function (css) {
     var _css = [];
     this.each(function (dom) {
         if (_.is_string(css)) {
-            var _style = window.getComputedStyle(dom, null)
+            var _style = window.getComputedStyle(dom, null);
             _css.push(_style.getPropertyValue(css));
         } else {
             _.each(css, function (value, index) {
@@ -476,7 +476,7 @@ _$_.add('show', function () {
  */
 _$_.add('parent', function (callback) {
     this.each(function (_elem) {
-        _.callback_audit(callback, _elem.parentNode)
+        _.callback_audit(callback, __.$(_elem.parentNode))
     });
     return this;
 });
@@ -485,13 +485,14 @@ _$_.add('parent', function (callback) {
  * @param callback
  */
 _$_.add('children', function (callback) {
-    this.each(function (_elem) {
+    var _self = this;
+    _self.each(function (_elem) {
         if (_elem.children.length > 0) {
             _.each(_elem.children, function (v, i) {
                 if (_.is_object(v)
                     && !_.is_function(v)
                     && _.is_set(_elem.children[i])) {
-                    _.callback_audit(callback, v)
+                    _.callback_audit(callback, __.$(v))
                 }
             })
         }
@@ -503,8 +504,9 @@ _$_.add('children', function (callback) {
  * @param callback
  */
 _$_.add('next', function (callback) {
-    this.each(function (_elem) {
-        _.callback_audit(callback, _elem.nextElementSibling)
+    var _self = this;
+    _self.each(function (_elem) {
+        _.callback_audit(callback, __.$(_elem.nextElementSibling));
     });
 
     return this;
@@ -515,18 +517,19 @@ _$_.add('next', function (callback) {
  */
 _$_.add('nexts', function (filter, callback) {
     callback = _.is_function(filter) ? filter : callback;
-    this.next(function (elem) {
+    var _self = this;
+    _self.next(function (elem) {
         var _sibling = elem;
         do {
             if (_.is_set(filter) && !_.is_function(filter)) {
-                __.$(_sibling).filter(filter, function (elem) {
+                _sibling.filter(filter, function (elem) {
                     _.callback_audit(callback, elem);
                 })
             } else {
                 _.callback_audit(callback, _sibling);
             }
             elem = _sibling;
-        } while ((_sibling = elem.nextElementSibling))
+        } while ((_sibling = __.$(elem.collection.nextElementSibling)).exist)
     });
 
     return this;
@@ -563,10 +566,10 @@ _$_.add('trigger', function (event, callback) {
 _$_.add('find', function (filter, callback) {
     var _self = this;
     _self.children(function (elem) {
-        __.$(elem).filter(filter, function (e) {
+        elem.filter(filter, function (e) {
             _.callback_audit(callback, e);
         }, function () {
-            __.$(elem).find(filter, callback);
+            elem.find(filter, callback);
         })
     });
 
@@ -582,8 +585,8 @@ _$_.add('parents', function (parent_class, callback) {
     var _self = this;
     _self.each(function (_elem) {
         var _parent = __.$(_elem.parentNode);
-        _parent.filter(parent_class, function () {
-            _.callback_audit(callback, _elem.parentNode);
+        _parent.filter(parent_class, function (parent) {
+            _.callback_audit(callback, parent);
         }, function () {
             _parent.parents(parent_class, callback);
         });
@@ -755,9 +758,10 @@ _$_.add('is', function (context) {
  * @param find
  * */
 _$_.add('get', function (find) {
-    var _return = [];
-    this.each(function (v) {
-        _return.push(v.querySelectorAll(find));
+    var _return = [],
+        _self = this;
+    _self.each(function (v) {
+        _return.push(__.$(v.querySelector(find)));
     });
     return _.spec_array(_return);
 });
