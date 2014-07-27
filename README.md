@@ -1472,6 +1472,9 @@ The Form library allows rapid processing of forms, with simple and efficient met
 ```js
 
 __.$(document).ready(function(){
+    
+    //Include is used if the library is not in the precompiled library else just intance the object
+    
     _.include('lib/Form', function(){
         var my_form = new Form;
         
