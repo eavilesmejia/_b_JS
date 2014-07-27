@@ -16,18 +16,55 @@ Compatibility with browsers
         *If there is any browser incompatibility please notify*
 
 
-Including Scripts
+Basic Config
 =======
 
-*"YOUR INCLUDE PATH" : Is used to include different libraries of the framework, as well as external libraries or drivers in the directory*
+Configuration is very simple, you just have to access the folder / config / and edit the file Init.js 
 
-*Example: (/assets/js/_b_/)*    
+In init.js need to set the processor ajax either PHP or whatever fence to process your request, if your system does not need a format, just leave it blank. 
+You need to set the APP_PATH, is who is responsible for setting the directory of your application, the default is '.. / .. /' and finally the environment, which can be either development or production.
+
+*Example APP_PATH: (/assets/js/_b_/)*  
+
+  
+Joining files
+-------------
+
+**Node JS Required**
+
+Unir archivos es relativamente simple, debes primero establecer las librerías que deseas utilizar en entorno. 
+
+```js
+ exports.files = {
+        js: {
+            output: 'base/include/init', //The output default base/include/init
+            src: [
+                'config/init', // Needed
+                'base/__b__' // Needed
+//              'lib/Form',
+//              'lib/Upload' // Add all the necessary scripts for startup
+            ]
+
+        },
+        templates: {
+            output: '',
+            src: []
+
+        }
+    }
+```
+
+Then you must get packages with `npm install` and finally run `npm start` and you'll have a unified library and minificada folder /base/include
+*If you have the option of using node, you must manually change the settings in the /base/include/init*
+Including Scripts
+================
+
+**You should not use the drivers on the unification of files, it is necessary to have separate controllers for each applicatio**
 
 ```html    
-<script src="YOUR PATH/__b__/base/__b__.min.js" data-path="YOUR INCLUDE PATH"></script>
+<script src="YOUR PATH/__b__/base/__b__.min.js"></script>
 <script src="YOUR PATH/__b__/controller/YOUR CONTROLLER.min.js"></script>
 ```
-*The files to be precompiled at include .min.js. You can use uglify or other precompiled to generate it .min*
 
 
 DOM Tools

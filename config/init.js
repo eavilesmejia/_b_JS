@@ -11,7 +11,7 @@ var setting = {
 };
 
 
-//Please install Node and run the command `npm install`
+//Please install Node and run the command `npm install` and `npm start` to execute
 //Set Environment
 if (exports)
     exports.setting = setting;
