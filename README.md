@@ -34,6 +34,7 @@ Joining files
 
 Merge files is relatively simple, you must first establish the libraries you want to use in environment.
 ```js
+//Development
  exports.files = {
         js: {
             output: 'base/include/init', //The output default base/include/init
