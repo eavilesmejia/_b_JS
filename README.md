@@ -63,7 +63,7 @@ Including Scripts
 *You should not use the drivers on the unification of files, it is necessary to have separate controllers for each application*
 
 ```html    
-<script src="YOUR PATH/__b__/base/__b__.min.js"></script>
+<script src="YOUR PATH/__b__/base/include/init.min.js"></script>
 <script src="YOUR PATH/__b__/controller/YOUR CONTROLLER.min.js"></script>
 ```
 
