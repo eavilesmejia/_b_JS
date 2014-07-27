@@ -32,8 +32,7 @@ Joining files
 
 **Node JS Required**
 
-Unir archivos es relativamente simple, debes primero establecer las librerías que deseas utilizar en entorno. 
-
+Merge files is relatively simple, you must first establish the libraries you want to use in environment.
 ```js
  exports.files = {
         js: {
