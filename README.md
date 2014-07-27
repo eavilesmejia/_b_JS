@@ -57,6 +57,8 @@ Merge files is relatively simple, you must first establish the libraries you wan
 Then you must get packages with `npm install` and finally run `npm start` and you'll have a unified library and .min in folder /base/include
 
 *If you do not have the option of using node, you must manually change the settings in the /base/include/init*
+
+
 Including Scripts
 ================
 
@@ -66,7 +68,7 @@ Including Scripts
 <script src="YOUR PATH/__b__/base/include/init.min.js"></script>
 <script src="YOUR PATH/__b__/controller/YOUR CONTROLLER.min.js"></script>
 ```
-
+When you need to add libraries to your drivers that were not pre-compiled in the unification, you can call them using the _.include method, as explained later use.
 
 DOM Tools
 =======
