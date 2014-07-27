@@ -61,12 +61,7 @@ var WARNING_BASE = {
     scriptCalls = {},
     waitingCalls = {},
     _navigator = navigator.userAgent.toLowerCase(),
-    _script = document.getElementsByTagName('script'),
-    _base_script = _script[_script.length - 1],
-    CONSTANTES = {
-        PATHJS: !!_base_script.dataset ? _base_script.dataset['path'] : _base_script.getAttribute('data-path'),
-        AJAXPROCESOR: !!_base_script.dataset ? _base_script.dataset['processor'] : _base_script.getAttribute('data-proccesor')
-    };
+    _script = document.getElementsByTagName('script');
 
 /**Modelo Base
  * @constructor
@@ -948,7 +943,7 @@ function Template() {
 Template.add('lookup', function (template, callback) {
     var _ajax = new Ajax,
         _conf = {
-            url: CONSTANTES.PATHJS + 'templates/' + template,
+            url: setting.app_path + 'templates/' + template,
             dataType: 'text/plain',
             processor: '.html'
         };
@@ -1226,7 +1221,7 @@ Workers.add('on', function (event, callback) {
  */
 Workers.add('set', function (url, callback) {
     var self = this;
-    self.Worker = (new Worker(CONSTANTES.PATHJS + url + '.min.js'));
+    self.Worker = (new Worker(setting.app_path + url + '.min.js'));
     self.Worker.addEventListener('message', function (e) {
         _.callback_audit(self.onsuccess, e);
     }, false);
@@ -1398,7 +1393,7 @@ Ajax.add('on', function (event, callback) {
 Ajax.add('request', function (config, callback) {
     var _self = this,
         _xhr = _self.xhr,
-        _processor = config.processor || CONSTANTES.AJAXPROCESOR || '',
+        _processor = config.processor || setting.ajax_processor || '',
         _token = config.token || true,
         _data = config.data
             ? config.data : null,
@@ -2426,7 +2421,7 @@ __b__.add('extend', function extend(target, source, overwrite) {
  */
 __b__.add('include', function include(script, wait, callback) {
     var _url = !_.is_url(script)
-        ? CONSTANTES.PATHJS + script + '.min.js'
+        ? setting.app_path + script + '.min.js'
         : script + '.min.js';
     _script = script
         .split('/')

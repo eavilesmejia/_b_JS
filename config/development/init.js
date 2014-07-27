@@ -8,8 +8,13 @@
 if (exports) {
     exports.files = {
         js: {
-            output:'lib/out',
-            src: ['lib/Form']
+            output: 'base/include/init',
+            src: [
+                'config/init',
+                'base/__b__', // Until here basic configuration
+                'lib/Form',
+                'lib/Upload' // Add all the necesary scripts
+            ]
 
         },
         templates: {
