@@ -56,7 +56,7 @@ Merge files is relatively simple, you must first establish the libraries you wan
 
 Then you must get packages with `npm install` and finally run `npm start` and you'll have a unified library and .min in folder /base/include
 
-*If you do not have the option of using node, you must manually change the settings in the /base/include/init*
+*If you do not have the option of using node, you must manually change the settings in the /base/include/init or include them separately *
 
 
 Including Scripts
